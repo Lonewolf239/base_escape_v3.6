@@ -2266,9 +2266,9 @@ void village(int vil) {
 //цикл деревни ☑
 void cycle5() {
 	if (Language && first)
-		house1 = "Dwelling house", house2 = "Dwelling house", house3 = "Dwelling house", meat = "closed", haha = "Find another way", meat_op = "Open", dach = "You approached the dacha...the gate is closed...\nYou tried to open it a little, but the dog immediately pounced on you...you quickly closed the gate...\nApparently you should distract it first...\n", dach1 = "Leave 1\n", dach2 = "", cruch = "You have approached the entrance to the catacombs...the door is boarded up...\nApparently we need to find a way to open the door...\nCut the boards 1\nLeave 2";
+		house1 = "Dwelling house", house2 = "Dwelling house", house3 = "Dwelling house", meat = "closed", haha = "Find another way", meat_op = "Open", dach = "You approached the dacha...the gate is closed...\nYou tried to open it a little, but the dog immediately pounced on you...you quickly closed the gate...\nApparently you should distract it first...\n", dach1 = "Leave 1\n", dach2 = "", cruch = "___________________________________________\nYou have approached the entrance to the catacombs...the door is boarded up...\nApparently we need to find a way to open the door...\nCut the boards 1\nLeave 2";
 	if (!Language && first)
-		house1 = "Жилой дом", house2 = "Жилой дом", house3 = "Жилой дом", meat = "закрыта", haha = "Найти иной путь", meat_op = "Открыть", dach = "Вы подошли к дачному участку...калитка закрыта...\nВы попытались её приоткрыть, но на вас сразу же накинулась собака...\nВы быстро закрыли калитку...видимо стоит её сначало отвлечь...\n", dach1 = "Уйти 1\n", dach2 = "", cruch = "Вы подошли к входу в катакомбы...дверь забита досками...\nВидимо надо найти способ открыть дверь...\nРазрубить доски 1\nУйти 2";
+		house1 = "Жилой дом", house2 = "Жилой дом", house3 = "Жилой дом", meat = "закрыта", haha = "Найти иной путь", meat_op = "Открыть", dach = "Вы подошли к дачному участку...калитка закрыта...\nВы попытались её приоткрыть, но на вас сразу же накинулась собака...\nВы быстро закрыли калитку...видимо стоит её сначало отвлечь...\n", dach1 = "Уйти 1\n", dach2 = "", cruch = "___________________________________________\nВы подошли к входу в катакомбы...дверь забита досками...\nВидимо надо найти способ открыть дверь...\nРазрубить доски 1\nУйти 2";
 	first = false;
 	if (poison)
 		infection_stage++;
@@ -3245,11 +3245,11 @@ void catacombs() {
 		if (isHasAxe) {
 			if (Language) {
 				cout << "___________________________________________\nYou cut those planks with difficulty...wasting about an hour...\nBut...the doors are now open!" << endl;
-				cruch = "___________________________________________\nYou have reached the entrance to the catacombs......the doors are open\nEnter 1\nLeave 2";
+				cruch = "___________________________________________\nYou have reached the entrance to the catacombs......the door is open\nEnter 1\nLeave 2";
 			}
 			if (!Language) {
 				cout << "___________________________________________\nВы с трудом разрубили эти доски...потратив где-то час времени...\nНо зато...двери теперь открыты!" << endl;
-				cruch = "___________________________________________\nВы подошли к входу в катакомбы......двери открыты\nВойти 1\nУйти 2";
+				cruch = "___________________________________________\nВы подошли к входу в катакомбы......дверь открыты\nВойти 1\nУйти 2";
 			}
 			church_open = true;
 			if (chg)
