@@ -1841,7 +1841,7 @@ void forest() {
 		if (_kbhit()) {
 			switch (_getch()) {
 			case ' ':
-				x_pl += 200.5;
+				x_pl += 2.5;
 				break;
 			default:
 				x_pl--;
