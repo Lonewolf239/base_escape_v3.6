@@ -3430,6 +3430,57 @@ void deep_room4() {
 void endgame() {
 	system("cls");
 	char files[5];
+	if (good_ending) {
+		if (Language) {
+			cout << "___________________________________________\nYou set a trap under the door and ran into the tunnel...\nSomewhere in the middle of the way you heard a loud click...and then a heart-rending scream...\nYou ran for about 10 more minutes when you finally saw the light.. .\nYou came out of a small cave in the middle of the forest...a village could be seen in the distance...\nIt seems your 'journey' is finally over..." << endl << endl;
+			cout << endl << endl << "		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		GG      OO  OO  OO  OO  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		GG GGG  OO  OO  OO  OO  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		GG  GG  OO  OO  OO  OO  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  GG   GGGG" << endl << endl;
+			system("pause");
+			system("cls");
+			cout << "Do you want to delete save files? yes/no" << endl;
+		}
+		if (!Language) {
+			cout << "___________________________________________\nВы поставили под дверь капкан и побежали в тоннель...\nГде-то на середине пути вы услышали громкий щелчок...а после и истошный крик...\nВы бежали ещё около 10 минут, когда наконец-то увидели свет...\nВы вышли из небольшой пещерки в центре леса...в дали виднелась деревня...\nКажется ваше 'путешествие' наконец закончилось..." << endl << endl;
+			cout << endl << endl << "		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		GG      OO  OO  OO  OO  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		GG GGG  OO  OO  OO  OO  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		GG  GG  OO  OO  OO  OO  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  GG   GGGG" << endl << endl;
+			system("pause");
+			system("cls");
+			cout << "Вы хотите удалить файлы сохранения? yes/no" << endl;
+		}
+	}
+	if (!good_ending) {
+		if (Language) {
+			cout << "___________________________________________\nYou immediately ran into the tunnel and ran with all your might...\nBut somewhere in the middle of the way, you felt a strong blow from behind...and then fell and passed out\nAlas, you were not destined to survive..." << endl;
+			cout << endl << endl << "		BBBBB    AAAA   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		BB  BB  AA  AA  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		BBBBB   AAAAAA  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		BB  BB  AA  AA  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		BBBBB   AA  AA  DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG" << endl << endl;
+			system("pause");
+			system("cls");
+			cout << "Do you want to delete save files? yes/no" << endl;
+		}
+		if (!Language) {
+			cout << "___________________________________________\nВы сразу же побежали в туннель и бежали из всех своих сил...\nНо где-то на середине пути вы почувствовали сильный удар сзади...а после упали и отрубились\nУвы, но выжить вам было не суждено..." << endl;
+			cout << endl << endl << "		BBBBB    AAAA   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		BB  BB  AA  AA  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		BBBBB   AAAAAA  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		BB  BB  AA  AA  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		BBBBB   AA  AA  DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG" << endl << endl;
+			system("pause");
+			system("cls");
+			cout << "Вы хотите удалить файлы сохранения? yes/no" << endl;
+		}
+	}
+	cin >> files;
+	if (files[0] == 'Y' || files[0] == 'y' || files[0] == 'D' || files[0] == 'd') {
+		if (remove("C:/Windows/Temp/save.txt") != 0)
+			cout << endl << endl << endl << "ERROR DELETE SAVE FILE" << endl << endl << endl << endl;
+		else
+			cout << endl << endl << endl << "SAVE FILES SUCCESSFULLY DELETED" << endl << endl << endl << endl;
+		system("pause");
+		system("cls");
+	}
+	if (files[0] == 'N' || files[0] == 'n') {
+		cout << endl << endl << endl << "SELECT SAVE MODE UNLOCKED" << endl << endl << endl << endl;
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "ecQmXo|*2}}UD}iRFEE1O85ZQDEh9j";
+			file.close();
+		}
+		system("pause");
+		system("cls");
+	}
 	if (nmoves < 260) {
 		if (Language)
 			cout << "===========================================\n          Achievement earned:\n             Speedrunner\n  Complete the game in less than 260 moves\n===========================================" << endl;
@@ -3511,55 +3562,6 @@ void endgame() {
 		system("pause");
 		system("cls");
 	}
-	if (good_ending) {
-		if (Language) {
-			cout << "___________________________________________\nYou set a trap under the door and ran into the tunnel...\nSomewhere in the middle of the way you heard a loud click...and then a heart-rending scream...\nYou ran for about 10 more minutes when you finally saw the light.. .\nYou came out of a small cave in the middle of the forest...a village could be seen in the distance...\nIt seems your 'journey' is finally over..." << endl << endl;
-			cout << endl << endl << "		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		GG      OO  OO  OO  OO  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		GG GGG  OO  OO  OO  OO  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		GG  GG  OO  OO  OO  OO  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  GG   GGGG" << endl << endl;
-			system("pause");
-			system("cls");
-			cout << "Do you want to delete save files? yes/no" << endl;
-		}
-		if (!Language) {
-			cout << "___________________________________________\nВы поставили под дверь капкан и побежали в тоннель...\nГде-то на середине пути вы услышали громкий щелчок...а после и истошный крик...\nВы бежали ещё около 10 минут, когда наконец-то уивидели свет...\nВы вышли из небольшой пещерки в центре леса...в дали виднелась деревня...\nКажется ваше 'путешествие' наконец закончилось..." << endl << endl;
-			cout << endl << endl << "		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		GG      OO  OO  OO  OO  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		GG GGG  OO  OO  OO  OO  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		GG  GG  OO  OO  OO  OO  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		 GGGG    OOOO    OOOO   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  GG   GGGG" << endl << endl;
-			system("pause");
-			system("cls");
-			cout << "Вы хотите удалить файлы сохранения? yes/no" << endl;
-		}
-	}
-	if (!good_ending) {
-		if (Language) {
-			cout << "___________________________________________\nYou immediately ran into the tunnel and ran with all your might...\nBut somewhere in the middle of the way, you felt a strong blow from behind...and then fell and passed out\nAlas, you were not destined to survive..." << endl;
-			cout << endl << endl << "		BBBBB    AAAA   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		BB  BB  AA  AA  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		BBBBB   AAAAAA  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		BB  BB  AA  AA  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		BBBBB   AA  AA  DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG" << endl << endl;
-			system("pause");
-			system("cls");
-			cout << "Do you want to delete save files? yes/no" << endl;
-		}
-		if (!Language) {
-			cout << "___________________________________________\nВы сразу же побежали в туннель и бежали из всех своих сил...\nНо где-то на середине пути вы почувствовали сильный удар сзади...а после упали и отрубились\nУвы, но выжить вам было не суждено..." << endl;
-			cout << endl << endl << "		BBBBB    AAAA   DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG\n		BB  BB  AA  AA  DD  DD    EE     NNN NN  DD  DD    II    NNN NN  GG\n		BBBBB   AAAAAA  DD  DD    EEEE   NN NNN  DD  DD    II    NN NNN  GG GGG\n		BB  BB  AA  AA  DD  DD    EE     NN  NN  DD  DD    II    NN  NN  GG  GG\n		BBBBB   AA  AA  DDDDD     EEEEE  NN  NN  DDDDD   IIIIII  NN  NN   GGGG" << endl << endl;
-			system("pause");
-			system("cls");
-			cout << "Вы хотите удалить файлы сохранения? yes/no" << endl;
-		}
-	}
-	cin >> files;
-	if (files[0] == 'Y' || files[0] == 'y' || files[0] == 'D' || files[0] == 'd') {
-		if (remove("C:/Windows/Temp/save.txt") != 0)
-			cout << endl << endl << endl << "ERROR DELETE SAVE FILE" << endl << endl << endl << endl;
-		else
-			cout << endl << endl << endl << "SAVE FILES SUCCESSFULLY DELETED" << endl << endl << endl << endl;
-	}
-	if (files[0] == 'N' || files[0] == 'n') {
-		cout << endl << endl << endl << "SELECT SAVE MODE UNLOCKED" << endl << endl << endl << endl;
-		ofstream file("C:/Windows/Temp/save.txt");
-		if (file.is_open()) {
-			file << "ecQmXo|*2}}UD}iRFEE1O85ZQDEh9j";
-			file.close();
-		}
-	}
-	system("pause");
-	system("cls");
 	if (Language)
 		cout << "During this journey you died " << ndeath << " times" << endl << endl;
 	if (!Language)
