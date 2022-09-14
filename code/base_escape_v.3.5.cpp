@@ -21,8 +21,8 @@ bool isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracke
 //инвентарь часть 5
 bool escpe = false, gameover = false, first_run = true;
 bool look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false;
-bool isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
-string house1, house2, house3, meat, haha, stage, door1, door2, meat_op, dach1, dach2, dach, cruch;
+bool isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true,dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
+string house1, house2, house3, meat, haha, stage, door1, door2, meat_op, dach1, dach2, dach, cruch, cab;
 //инвентарь часть 6
 bool isHasKey5 = false;
 
@@ -187,7 +187,7 @@ void save() {
 		start();
 	}
 	else {
-		timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+		timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
 		file.getline(sae, 25);
 		file.close();
 		if (sae[12] == 'B') {
@@ -233,7 +233,7 @@ void save() {
 		if (sae[16] == 'F') {
 			cout << "LOADING SAVE..." << endl << endl;
 			cout << "SAVE LOADED SUCCESSFULLY" << endl << endl;
-			nsave = 4;
+			nsave = 666;
 			nmoves = 280;
 			system("pause");
 			levels();
@@ -1409,12 +1409,19 @@ void utroom() {
 //второй этаж
 void floor2(int floor2 ) {
 	nmoves++;
+	if (god) {
+		if (Language)
+			cab = "You went to the door and tried to open...closed...\nOpen";
+		if (!Language)
+			cab = "Вы подошли к двери и попробовали её открыть...закрыто...\nОткрыть";
+		god = false;
+	}
 	system("cls");
 	if (floor2 == 1) {
 		if (Language)
-			cout << "___________________________________________\nYou went to the door and tried to open...closed...\nOpen 1\nLeave 2" << endl;
+			cout << "___________________________________________\n" << cab << " 1\nLeave 2" << endl;
 		if (!Language)
-			cout << "___________________________________________\nВы подошли к двери и попробовали её открыть...закрыто...\nОткрыть 1\nУйти 2" << endl;
+			cout << "___________________________________________\n" << cab << " 1\nУйти 2" << endl;
 		switch (_getch()) {
 		case '1':
 			cabinet();
@@ -1482,6 +1489,13 @@ void floor2(int floor2 ) {
 //цикл фторого этажа
 void cycle4() {
 	system("cls");
+	if (god) {
+		if (Language)
+			cab = "You went to the door and tried to open...closed...\nOpen";
+		if (!Language)
+			cab = "Вы подошли к двери и попробовали её открыть...закрыто...\nОткрыть";
+		god = false;
+	}
 	if (Language) {
 		cout << "___________________________________________\nYou are standing next to the stairs\nCabinet 1\nBedroom 2\nRestroom 3\nAttic 4" << endl;
 		if (isHasFirecracker)
@@ -1534,6 +1548,7 @@ void cabinet() {
 			cout << "___________________________________________\nThere is nothing more interesting here..." << endl;
 		if (!Language)
 			cout << "___________________________________________\nЗдесь нет ничего интересного..." << endl;
+		system("pause");
 		cycle4();
 	}
 	if (isHasBooks) {
@@ -1578,10 +1593,14 @@ void cabinet() {
 		cycle4();
 	}
 	if (isHasKey3) {
-		if (Language)
+		if (Language) {
+			cab = "You come to the door...it's open...\nEnter";
 			cout << "___________________________________________\nYou opened the door and entered a spacious room...it was a dark gothic office with a bunch of bookshelves\nIt seems that one of the shelves is missing a couple of books...\nWhen leaving, you pressed some kind of lever on the wall...it seems that somewhere- then the door opened...\nLeave 1" << endl;
-		if (!Language)
+		}
+		if (!Language) {
+			cab = "Вы подошли к двери...она открыта...\nВойти";
 			cout << "___________________________________________\nВы открыли дверь и вошли в просторную комнату... это был темный готический кабинет с кучей книжных полок\nКажется, что на одной из полок не хватает пары книг...\nВыходя, вы нажали какой-то рычаг на стене...кажется что где-то открылась дверь...\nУйти 1" << endl;
+		}
 		switch (_getch()) {
 		case '1':
 			nmoves++;
@@ -1822,7 +1841,7 @@ void forest() {
 		if (_kbhit()) {
 			switch (_getch()) {
 			case ' ':
-				x_pl += 2.5;
+				x_pl += 200.5;
 				break;
 			default:
 				x_pl--;
@@ -2039,9 +2058,9 @@ void left() {
 	int save = 0;
 	system("cls");
 	if (Language)
-		cout << "You turned left...after a while you came out onto an old brick path...\nYou walked for quite some time when suddenly a house appeared from behind the trees...and behind it another and another...\nYou have come to the village..." << endl;
+		cout << "___________________________________________\nYou turned left...after a while you came out onto an old brick path...\nYou walked for quite some time when suddenly a house appeared from behind the trees...and behind it another and another...\nYou have come to the village..." << endl;
 	if (!Language)
-		cout << "Вы свернули налево...через какое-то время вы вышли на старую кирпичную дорожку...\nВы шли довольно-таки долго как вдруг из-за деревьев показался домик...а за ним ещё один и ещё один...\nВы пришли в деревню..." << endl;
+		cout << "___________________________________________\nВы свернули налево...через какое-то время вы вышли на старую кирпичную дорожку...\nВы шли довольно-таки долго как вдруг из-за деревьев показался домик...а за ним ещё один и ещё один...\nВы пришли в деревню..." << endl;
 	system("pause");
 	system("cls");
 	if(Language)
@@ -2101,13 +2120,13 @@ void prev_village() {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |    Chapter 6. Village.    |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
 		system("pause");
 		system("cls");
-		cout << "You are standing in the middle of an abandoned village...quite a creepy place...\nThere is a rotten stench in the air...it seems you are not alone here...you should be careful\nLooking around you found some interesting houses:\nButcher shop 1\nDwelling house 2\nDwelling house 3\nDwelling house 4\nChurch 5" << endl;
+		cout << "___________________________________________\nYou are standing in the middle of an abandoned village...quite a creepy place...\nThere is a rotten stench in the air...it seems you are not alone here...you should be careful\nLooking around you found some interesting houses:\nButcher shop 1\nDwelling house 2\nDwelling house 3\nDwelling house 4\nChurch 5" << endl;
 	}
 	if (!Language) {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |     Глава 6. Деревня.     |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
 		system("pause");
 		system("cls");
-		cout << "Вы стоите в центре заброшенной деревни...довольно-таки жуткое место...\nВ воздухе веет гнильная вонь...кажется вы тут не одни...стоит быть осторожным\nОсмотревшись вы нашли несколько интересных домиков:\nМясная лавка 1\nЖилой дом 2\nЖилой дом 3\nЖилой дом 4\nЦерковь 5" << endl;
+		cout << "___________________________________________\nВы стоите в центре заброшенной деревни...довольно-таки жуткое место...\nВ воздухе веет гнильная вонь...кажется вы тут не одни...стоит быть осторожным\nОсмотревшись вы нашли несколько интересных домиков:\nМясная лавка 1\nЖилой дом 2\nЖилой дом 3\nЖилой дом 4\nЦерковь 5" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -2263,7 +2282,7 @@ void village(int vil) {
 		}
 	}
 }
-//цикл деревни ☑
+//цикл деревни 
 void cycle5() {
 	if (Language && first)
 		house1 = "Dwelling house", house2 = "Dwelling house", house3 = "Dwelling house", meat = "closed", haha = "Find another way", meat_op = "Open", dach = "You approached the dacha...the gate is closed...\nYou tried to open it a little, but the dog immediately pounced on you...you quickly closed the gate...\nApparently you should distract it first...\n", dach1 = "Leave 1\n", dach2 = "", cruch = "___________________________________________\nYou have approached the entrance to the catacombs...the door is boarded up...\nApparently we need to find a way to open the door...\nCut the boards 1\nLeave 2";
@@ -2368,7 +2387,7 @@ void cycle5() {
 		break;
 	}
 }
-//мясная лавка ☑
+//мясная лавка 
 void meat_shop() {
 	system("cls");
 	if (house1_com) {
@@ -2454,7 +2473,7 @@ void meat_shop() {
 				if (!Language)
 					cout << "___________________________________________\nВы зашли в мясницкую лавку...кругом была разруха, а пол и стены украшали догнивающие куски мяса\nДаже через респиратор вы дышали с трудом...обойдя весь магазинчик, вы нашли что-то на подобии холодильника\nВнутри него лежал тухлый кусок мяса...Вы быстро засунули его в сумку и вышли из магазина..." << endl;
 			}
-			isHasMeat = true;
+			isHasMeat = true, house1_com = true;
 			system("pause");
 			cycle5();
 			break;
@@ -2476,7 +2495,7 @@ void meat_shop() {
 		cycle5();
 	}
 }
-//хижина мясника ☑
+//хижина мясника 
 void hut() {
 	if (Language && firhut)
 		door1 = "Door", door2 = "Strange door", haha = "Climb in the window";
@@ -2538,7 +2557,7 @@ void hut() {
 		hut();
 	}
 }
-//спальня хижины ☑
+//спальня хижины 
 void room1() {
 	system("cls");
 	if (firroo) {
@@ -2606,7 +2625,7 @@ void room1() {
 		break;
 	}
 }
-//дача ☑
+//дача 
 void dacha() {
 	system("cls");
 	if (!fit) {
@@ -2677,9 +2696,9 @@ void dacha() {
 		}
 		if (isHasBrick) {
 			if (Language)
-				cout << "___________________________________________\nYou moved away from the window, swung and threw a brick at him...\nIt was loud...but now you can get into the house...\nYou carefully climbed through the window..." << endl;
+				cout << "___________________________________________\nYou moved away from the window, swung and threw a log at him...\nIt was loud...but now you can get into the house...\nYou carefully climbed through the window..." << endl;
 			if (!Language)
-				cout << "___________________________________________\nВы отошли от окна подальше, размахнулись и кинули в него кирпич...\nБыло громко...но теперь можно попасть в дом...\nВы аккуратно залезли через окно..." << endl;
+				cout << "___________________________________________\nВы отошли от окна подальше, размахнулись и кинули в него полена...\nБыло громко...но теперь можно попасть в дом...\nВы аккуратно залезли через окно..." << endl;
 			system("pause");
 			home();
 		}
@@ -2702,7 +2721,7 @@ void dacha() {
 		break;
 	}
 }
-//беседка ☑
+//беседка 
 void pavilion() {
 	system("cls");
 	if (Language)
@@ -2733,7 +2752,7 @@ void pavilion() {
 		break;
 	}
 }
-//поленница ☑
+//поленница 
 void warehouse() {
 	system("cls");
 	if (isHasBrick || house3_com) {
@@ -2752,7 +2771,7 @@ void warehouse() {
 	system("pause");
 	dacha();
 }
-//дом дачи ☑
+//дом дачи 
 void home() {
 	system("cls");
 	if (!fir) {
@@ -2793,7 +2812,7 @@ void home() {
 		break;
 	}
 }
-//спальня дачи ☑
+//спальня дачи 
 void beroom() {
 	system("cls");
 	if (fig) {
@@ -2851,7 +2870,7 @@ void beroom() {
 		break;
 	}
 }
-//гостинная дачи ☑
+//гостинная дачи 
 void liroom() {
 	system("cls");
 	if (fig2) {
@@ -2922,7 +2941,7 @@ void liroom() {
 		break;
 	}
 }
-//коттедж ☑
+//коттедж 
 void cottage() {
 	system("cls");
 	if (!fig3) {
@@ -2976,7 +2995,7 @@ void cottage() {
 		break;
 	}
 }
-//мастерская коттеджа ☑
+//мастерская коттеджа 
 void cot_workshop() {
 	system("cls");
 	if (!fit1) {
@@ -3055,7 +3074,7 @@ void cot_workshop() {
 		cot_workshop();
 	}
 }
-//ванна коттеджа ☑
+//ванна коттеджа 
 void cot_cabinet() {
 	system("cls");
 	if (Language)
@@ -3081,7 +3100,7 @@ void cot_cabinet() {
 		break;
 	}
 }
-//второй этаж коттеджа ☑
+//второй этаж коттеджа 
 void floor_2() {
 	system("cls");
 	if (!fit2) {
@@ -3160,7 +3179,7 @@ void floor_2() {
 		break;
 	}
 }
-//церковь ☑
+//церковь 
 void church() {
 	system("cls");
 	if (!T_virus) {
@@ -3220,7 +3239,7 @@ void church() {
 		break;
 	}
 }
-//катакомбы ☑
+//катакомбы 
 void catacombs() {
 	system("cls");
 	cout << cruch << endl;
@@ -3244,12 +3263,12 @@ void catacombs() {
 		}
 		if (isHasAxe) {
 			if (Language) {
-				cout << "___________________________________________\nYou cut those planks with difficulty...wasting about an hour...\nBut...the doors are now open!" << endl;
+				cout << "___________________________________________\nYou cut those planks with difficulty...wasting about an hour...\nBut...the door is now open!" << endl;
 				cruch = "___________________________________________\nYou have reached the entrance to the catacombs......the door is open\nEnter 1\nLeave 2";
 			}
 			if (!Language) {
-				cout << "___________________________________________\nВы с трудом разрубили эти доски...потратив где-то час времени...\nНо зато...двери теперь открыты!" << endl;
-				cruch = "___________________________________________\nВы подошли к входу в катакомбы......дверь открыты\nВойти 1\nУйти 2";
+				cout << "___________________________________________\nВы с трудом разрубили эти доски...потратив где-то час времени...\nНо зато...дверь теперь открыта!" << endl;
+				cruch = "___________________________________________\nВы подошли к входу в катакомбы......дверь открыта\nВойти 1\nУйти 2";
 			}
 			church_open = true;
 			if (chg)
@@ -3275,7 +3294,7 @@ void catacombs() {
 		break;
 	}
 }
-//глубиные катакомбы ☑
+//глубиные катакомбы 
 void deep_catacombs() {
 	system("cls");
 	if (!tigr) {
@@ -3333,7 +3352,7 @@ void deep_catacombs() {
 		break;
 	}
 }
-//комната с книжкой ☑
+//комната с книжкой 
 void deep_room1() {
 	system("cls");
 	if (Language)
@@ -3361,7 +3380,7 @@ void deep_room1() {
 	system("pause");
 	deep_catacombs();
 }
-//комната с ключём ☑
+//комната с ключём 
 void deep_room2() {
 	system("cls");
 	if (Language)
@@ -3569,7 +3588,7 @@ void endgame() {
 	cout << endl << endl << "TTTTTT  HH  HH   AAAA   NN  NN  KK  KK   SSSS  \n  TT    HH  HH  AA  AA  NNN NN  KK KK   SS     \n  TT    HHHHHH  AAAAAA  NN NNN  KKKK     SSSS  \n  TT    HH  HH  AA  AA  NN  NN  KK KK       SS \n  TT    HH  HH  AA  AA  NN  NN  KK  KK   SSSS  " << endl << endl;
 	cout << "FFFFFF   OOOO   RRRRR     PPPPP   LL       AAAA   YY  YY  IIIIII  NN  NN   GGGG   !!!\nFF      OO  OO  RR  RR    PP  PP  LL      AA  AA   YYYY     II    NNN NN  GG      !!!\nFFFF    OO  OO  RRRRR     PPPPP   LL      AAAAAA    YY      II    NN NNN  GG GGG  !!!\nFF      OO  OO  RR  RR    PP      LL      AA  AA    YY      II    NN  NN  GG  GG\nFF       OOOO   RR  RR    PP      LLLLLL  AA  AA    YY    IIIIII  NN  NN   GGGG   !!!" << endl;
 	system("pause");
-	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
 	main();
 }
 //выбор локации
@@ -3621,11 +3640,11 @@ void main_menu() {
 	system("cls");
 	if (Language) {
 		cout << "=================base_escape_v3.5=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.5\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                 Delete save files 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "Welcome to my updated version of base_escape_v3.5.1\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                 Delete save files 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 	}
 	if (!Language) {
 		cout << "======================base_escape_v3.5======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                  Удалить файлы сохранения 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.1\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                  Удалить файлы сохранения 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -3758,26 +3777,3 @@ void delte() {
 	system("pause");
 	main_menu();
 }
-
-/*
-										План 3.5:
-						Сделано - ☑				 Не сделано - ❎
-	Прописать Дачу ☑
-		1.Для входа в дачу надо отвлечь псину в будке куском мяса ☑
-		2.В даче будет двор и само здание ☑
-		3.Здание закрыто на ключ, но во дворе можно найти кирпич и сломать окно ☑
-		4.В здании 2 комнаты: спальня (в ней пусто, но можно повзаимодействовать с вещами) и гостинная (в ней ты находишь топор чтобы попасть в церковь) ☑
-	Прописать Коттедж ☑
-		1.Вход свободен ☑
-		2.В коттедже ты найдёшь керосиновую лампу ☑
-		3.В коттедже 2 этажа на 1 лежит керосин ☑, на 2 лампа ☑
-		4.На 1 этаже: 3 комнаты кухня ☑, мастерская ☑, кабинет ☑; На 2 этаже: 2 спальни ☑
-		5.Спопособы умереть: 1.На кухне стоит стакан с водой (в нём яд) ☑; В спальне 2 провалится пол ☑
-	Прописать церковь ☑
-		1.Вход заколочен досками (нужон топор) ☑
-		2.На первом этаже можно взаимодействовать с кучей предметов, в углу стоят строительные леса, рядом с ними ведёрко краски и респиратор ☑
-		3.Лестница к башне с колоколом сломана ☑
-		4.Нужно идти в подвал, но там слишком темно (нужна лампа с киросином) ☑
-		5.В подвале 4 комнаты, 3 сюжетная (закрыта на ключ; ключ в комнате 2) ☑, 1 и 4 нужны ради взаимодействий ☑
-		6.Когда гг попадает в комнату 3, если есть капкан он услышить топот и раскроет капкан перед тунелем и убежит (хорошая концовка), если капкана нет - гг поймают (плохая концовка) ☑
-*/
