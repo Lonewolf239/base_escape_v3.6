@@ -10,6 +10,7 @@ using namespace std;
 int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0;
 bool achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, somebody = false, gas_gas_gas = false, sans = false;
 bool Language = true, first_start = true, good_ending = false, firw = true;
+char qsave[] = { "fffffffff" };
 //инвентарь часть 1
 bool isHasKnife = false, isHasKey1 = false;
 //инвентарь часть 2
@@ -114,6 +115,28 @@ void delte();
 //main
 int main() {
 	system("cls");
+	ifstream achievements("C:/Windows/Temp/qsave.txt");
+	if (achievements.is_open())
+		achievements >> qsave;
+	achievements.close();
+	if (qsave[0] == 't')
+		achievements1 = true;
+	if (qsave[1] == 't')
+		achievements2 = true;
+	if (qsave[2] == 't')
+		achievements3 = true;
+	if (qsave[3] == 't')
+		achievements4 = true;
+	if (qsave[4] == 't')
+		achievements5 = true;
+	if (qsave[5] == 't')
+		achievements6 = true;
+	if (qsave[6] == 't')
+		achievements7 = true;
+	if (qsave[7] == 't')
+		achievements8 = true;
+	if (qsave[8] == 't')
+		achievements9 = true;
 	setlocale(LC_CTYPE, "rus");
 	if (first_start) {
 		cout << "WW   WW  EEEEE   LL       CCCC    OOOO   MM   MM  EEEEE\nWW   WW  EE      LL      CC  CC  OO  OO  MMM MMM  EE\nWW W WW  EEEE    LL      CC      OO  OO  MM M MM  EEEE\nWWWWWWW  EE      LL      CC  CC  OO  OO  MM   NN  EE\n WW WW   EEEEE   LLLLLL   CCCC    OOOO   MM   MM  EEEEE" << endl << endl;
@@ -3581,6 +3604,29 @@ void endgame() {
 		system("pause");
 		system("cls");
 	}
+	if (achievements1)
+		qsave[0] = 't';
+	if (achievements2)
+		qsave[1] = 't';
+	if (achievements3)
+		qsave[2] = 't';
+	if (achievements4)
+		qsave[3] = 't';
+	if (achievements5)
+		qsave[4] = 't';
+	if (achievements6)
+		qsave[5] = 't';
+	if (achievements7)
+		qsave[6] = 't';
+	if (achievements8)
+		qsave[7] = 't';
+	if (achievements9)
+		qsave[8] = 't';
+	ofstream achievements("C:/Windows/Temp/qsave.txt");
+	if (achievements.is_open()) {
+		achievements << qsave;
+		achievements.close();
+	}
 	if (Language)
 		cout << "During this journey you died " << ndeath << " times" << endl << endl;
 	if (!Language)
@@ -3640,11 +3686,11 @@ void main_menu() {
 	system("cls");
 	if (Language) {
 		cout << "=================base_escape_v3.5=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.5.1\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                 Delete save files 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "Welcome to my updated version of base_escape_v3.5.2\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 	}
 	if (!Language) {
 		cout << "======================base_escape_v3.5======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.1\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                  Удалить файлы сохранения 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.2\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -3759,21 +3805,25 @@ void achievements() {
 void delte() {
 	char files[5];
 	system("cls");
-	if (Language) {
-		cout << "Are you sure you want to delete save files? yes/no" << endl;
-	}
-	if (!Language) {
-		cout << "Вы уверены что хотите удалить файлы сохранения? yes/no" << endl;
-	}
+	if (Language)
+		cout << "Are you sure you want to delete game data? yes/no" << endl;
+	if (!Language)
+		cout << "Вы уверены что хотите удалить игровые данные? yes/no" << endl;
 	cin >> files;
 	if (files[0] == 'Y' || files[0] == 'y' || files[0] == 'D' || files[0] == 'd') {
 		if (remove("C:/Windows/Temp/save.txt") != 0)
-			cout << endl << endl << endl << "		ERROR DELETE SAVE FILE" << endl << endl << endl << endl;
+			cout << endl << endl << endl << "		ERROR DELETE SAVE FILE" << endl;
 		else
-			cout << endl << endl << endl <<	"		SAVE FILES SUCCESSFULLY DELETED" << endl << endl << endl << endl;
+			cout << endl << endl << endl <<	"		SAVE FILES SUCCESSFULLY DELETED" << endl;
+		if (remove("C:/Windows/Temp/qsave.txt") != 0)
+			cout  << "		ERROR DELETE ACHIEVEMENTS FILE" << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+		else {
+			cout << "		ACHIEVEMENTS FILES SUCCESSFULLY DELETED" << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+			achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false;
+		}
 	}
 	else
-		cout << "	 OOOO   KK  KK\n	OO  OO  KK KK\n	OO  OO  KKKK\n	OO  OO  KK KK\n	 OOOO   KK  KK" << endl << endl;
+		cout << endl << endl << endl << endl << endl << "	 OOOO   KK  KK\n	OO  OO  KK KK\n	OO  OO  KKKK\n	OO  OO  KK KK\n	 OOOO   KK  KK" << endl << endl << endl << endl << endl << endl << endl << endl;
 	system("pause");
 	main_menu();
 }
