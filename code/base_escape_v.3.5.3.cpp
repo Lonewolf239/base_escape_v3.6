@@ -7,7 +7,7 @@
 using namespace std;
 
 //основные настройки и достижения
-int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 100, qhelp = 0;
+int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0;
 bool achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, achievements10 = false, somebody = false, gas_gas_gas = false, sans = false;
 bool Language = true, first_start = true, good_ending = false, firw = true;
 char qsave[] = { "ffffffffff" };
