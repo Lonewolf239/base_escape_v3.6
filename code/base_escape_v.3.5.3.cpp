@@ -4202,6 +4202,30 @@ void updet_list() {
 //достижения
 void achievements() {
 	system("cls");
+	ifstream achievements("C:/Windows/Temp/qsave.txt");
+	if (achievements.is_open())
+		achievements >> qsave;
+	achievements.close();
+	if (qsave[0] == 't')
+		achievements1 = true;
+	if (qsave[1] == 't')
+		achievements2 = true;
+	if (qsave[2] == 't')
+		achievements3 = true;
+	if (qsave[3] == 't')
+		achievements4 = true;
+	if (qsave[4] == 't')
+		achievements5 = true;
+	if (qsave[5] == 't')
+		achievements6 = true;
+	if (qsave[6] == 't')
+		achievements7 = true;
+	if (qsave[7] == 't')
+		achievements8 = true;
+	if (qsave[8] == 't')
+		achievements9 = true;
+	if (qsave[9] == 't')
+		achievements10 = true;
 	if (firw) {
 		if (Language)
 			cout << "		         ===================\n		         |     Warning     |\n		         ===================\n=======================================================================\nAchievements are counted only after the complete completion of the game\n=======================================================================\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
