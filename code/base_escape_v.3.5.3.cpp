@@ -288,7 +288,7 @@ void save() {
 			if (remove("C:/Windows/Temp/save.txt") != 0)
 				cout << "ERROR 404" << endl;
 			else
-				cout << "SAVE SYSTEM HAS BEEN UPDATED\nYOUR SAVE FILE IS NO LONGER COMPATIBLE\nDELETE..." << endl << endl << endl;
+				cout << "SAVE SYSTEM HAS BEEN UPDATED\nYOUR SAVE FILE IS NO LONGER COMPATIBLE\nDELETING..." << endl << endl << endl;
 			system("pause");
 			start();
 		}
