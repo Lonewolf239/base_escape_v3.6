@@ -7,7 +7,8 @@
 using namespace std;
 
 //основные настройки и достижения
-int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0;
+
+int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0, cheat = 0;
 bool achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, achievements10 = false, somebody = false, gas_gas_gas = false, sans = false;
 bool Language = true, first_start = true, good_ending = false, firw = true;
 char qsave[] = { "ffffffffff" };
@@ -4142,23 +4143,38 @@ void levels() {
 }
 //меню
 void main_menu() {
+	int rnd = rand() % 100;
 	system("cls");
+	rnd = rand() % 100;
 	if (Language) {
-		cout << "=================base_escape_v3.5.3=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.5.3\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "=================base_escape_v3.5.4=================" << endl << endl;
+		cout << "Welcome to my updated version of base_escape_v3.5.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		if (rnd == 6)
+			cout << "Cheat 6 -> 3 -> 0 -> 5 -> 1/2";
 	}
 	if (!Language) {
-		cout << "======================base_escape_v3.5.3======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.3\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "======================base_escape_v3.5.4======================" << endl << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		if (rnd == 6)
+			cout << "Чит 6 -> 3 -> 0 -> 5 -> 1/2";
 	}
 	switch (_getch()) {
 	case '1':
+		cheat *= 8;
+		if (cheat == 120)
+			nhelp += 20;
+		cheat = 0;
 		start();
 		break;
 	case '2':
+		cheat *= 8;
+		if (cheat == 120)
+			nhelp += 20;
+		cheat = 0;
 		save();
 		break;
 	case '3':
+		cheat++;
 		developer();
 		break;
 	case '4':
@@ -4166,12 +4182,15 @@ void main_menu() {
 		main_menu();
 		break;
 	case '5':
+		cheat *= 5;
 		updet_list();
 		break;
 	case '6':
+		cheat = 0;
 		achievements();
 		break;
 	case '0':
+		cheat *= 3;
 		delte();
 		break;
 	default:
@@ -4308,8 +4327,8 @@ void delte() {
 		else {
 			cout << "		ACHIEVEMENTS FILES SUCCESSFULLY DELETED" << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, achievements10 = false;
-			for(int i= 0;i<10;i++)
-			qsave[i] = 'f';
+			for (int i = 0; i < 10; i++)
+				qsave[i] = 'f';
 		}
 	}
 	else
