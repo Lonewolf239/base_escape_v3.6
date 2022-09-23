@@ -4148,15 +4148,15 @@ void main_menu() {
 	rnd = rand() % 100;
 	if (Language) {
 		cout << "=================base_escape_v3.5.4=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.5.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "Welcome to my updated version of base_escape_v3.5.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
-			cout << "Cheat 6 -> 3 -> 0 -> 5 -> 1/2";
+			cout << "Cheat: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	if (!Language) {
 		cout << "======================base_escape_v3.5.4======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
-			cout << "Чит 6 -> 3 -> 0 -> 5 -> 1/2";
+			cout << "Чит: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	switch (_getch()) {
 	case '1':
@@ -4189,9 +4189,11 @@ void main_menu() {
 		cheat = 0;
 		achievements();
 		break;
-	case '0':
+	case '7':
 		cheat *= 3;
 		delte();
+		break;
+	case '0':
 		break;
 	default:
 		main_menu();
