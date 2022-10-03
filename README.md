@@ -1,2 +1,2 @@
-# Try to escape from the insidious maniac in the updated version of my text game base_escape_v3.5.4a
+# Try to escape from the insidious maniac in the updated version of my text game base_escape_v3.6
 # Version for Win64 and Win32
