@@ -13,7 +13,7 @@ bool achievements1 = false, achievements2 = false, achievements3 = false, achiev
 bool Language = true, first_start = true, good_ending = false, firw = true;
 char qsave[] = { "ffffffffff" };
 //инвентарь часть 1
-bool isHasKnife = false, isHasKey1 = false;
+bool isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false;
 //инвентарь часть 2
 bool isHasCrowbar = false, isHasMaul = false, isHasExplosives = false;
 //инвентарь часть 3
@@ -33,7 +33,8 @@ void start();
 void save();
 void location(int loc);
 void cycle1();
-void ghost_killing();
+void ghost_killing(int boo);
+void cycle1_1();
 void window();
 void close(int cl);
 void door();
@@ -145,7 +146,7 @@ int main() {
 		cout << "IIIIII  NN  NN\n  II    NNN NN\n  II    NN NNN\n  II    NN  NN\nIIIIII  NN  NN" << endl << endl;
 		cout << "BBBBB    AAAA    SSSS   EEEEE\nBB  BB  AA  AA  SS      EE\nBBBBB   AAAAAA   SSSS   EEEE\nBB  BB  AA  AA      SS  EE\nBBBBB   AA  AA   SSSS   EEEEE" << endl << endl;
 		cout << "EEEEE   SSSS    CCCC    AAAA   PPPPP   EEEEE\nEE     SS      CC  CC  AA  AA  PP  PP  EE\nEEEE    SSSS   CC      AAAAAA  PPPPP   EEEE\nEE         SS  CC  CC  AA  AA  PP      EE\nEEEEE   SSSS    CCCC   AA  AA  PP      EEEEE" << endl << endl;
-		cout << " 3333       55555\n3   33      55\n  333       55555\n3   33          55\n 3333   **  55555" << endl;
+		cout << " 3333       66666\n3   33      6\n  333       66666\n3   33      6   6\n 3333   **  66666" << endl;
 		system("pause");
 	}
 	main_menu();
@@ -154,7 +155,7 @@ int main() {
 //Старт
 void start() {
 	system("cls");
-	timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+	timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, isHasKey1 = false, windows_broke = false, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
 	if (Language) {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |    Chapter 1. Basement.   |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
 		system("pause");
@@ -165,7 +166,7 @@ void start() {
 		cout << "___________________________________________\nLooking around, you realized that you did not see anything :(" << endl << endl;
 		system("pause");
 		system("cls");
-		cout << "___________________________________________\nLooking around AT FEEL, you realized that it was a small room...\nYou found:\nWindow 1\nCloset 2\nDoor 3\nCarpet 4" << endl << endl;
+		cout << "___________________________________________\nLooking around AT FEEL, you realized that it was a small room...\nYou found:\nWindow 1\nCloset 2\nDoor 3\nCarpet 4\nBag 5" << endl << endl;
 		if (nhelp != 0)
 			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
 	}
@@ -179,7 +180,7 @@ void start() {
 		cout << "___________________________________________\nОсмотревшись, ты понял, что ничего не видишь :(" << endl << endl;
 		system("pause");
 		system("cls");
-		cout << "___________________________________________\nОсмотревшись НА ОЩУПЬ, ты понял, что находишься в маленькой комнате...\nТы нашёл:\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4" << endl << endl;
+		cout << "___________________________________________\nОсмотревшись НА ОЩУПЬ, ты понял, что находишься в маленькой комнате...\nТы нашёл:\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4\nМешок 5" << endl << endl;
 		if (nhelp != 0)
 			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
 	}
@@ -199,6 +200,10 @@ void start() {
 	case '4':
 		nmoves++;
 		location(4);
+		break;
+	case '5':
+		nmoves++;
+		location(5);
 		break;
 	case 'x':
 		if (nhelp == 0)
@@ -234,7 +239,7 @@ void save() {
 		start();
 	}
 	else {
-		timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+		timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasHammer = false, isHasPotatoes = false, windows_broke = false, isHasValve = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
 		file >> sae;
 		file.close();
 		if (sae == "lx55GZ6dG6eJBl2oh6S0vtXVS3|MsS") {
@@ -370,28 +375,93 @@ void location(int loc) {
 			break;
 		}
 	}
+	if (loc == 5) {
+		if (isHasPotatoes) {
+			if (Language)
+				cout << "___________________________________________\nA sack full of rotten potatoes...nothing interesting..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nПолный мешок гнилой картошки...ничего интересного..." << endl;
+			system("pause");
+			cycle1();
+		}
+		if (!isHasPotatoes) {
+			if (Language)
+				cout << "___________________________________________\nYou approached the bag lying against the wall... there is something in it...\nCut 1\nLeave 2" << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к мешку, лежащему у стены... в нем что-то есть...\nРазрезать 1\nУйти 2" << endl;
+			switch (_getch()) {
+			case '1':
+				nmoves++;
+				if (!isHasKnife) {
+					if (Language)
+						cout << "___________________________________________\nAnd what are you going to cut it with?" << endl;
+					if (!Language)
+						cout << "___________________________________________\nИ чем ты собрался его резать?" << endl;
+					system("pause");
+					cycle1();
+				}
+				if (isHasKnife) {
+					if (isHasHammer || windows_broke) {
+						isHasKnife = false;
+						if (Language)
+							cout << "___________________________________________\nYou stuck a knife into the sack and cut it with difficulty...you broke the knife...\nMmm, there's a potato inside...it's a bit rotten though...\nYou took a few..." << endl;
+						if (!Language)
+							cout << "___________________________________________\nВы воткнули нож в мешок и с трудом его разрезали...вы сломали нож...\nМмм, внутри него лежит картошка...правда немного гнилая...\nВы взяли несколько штук..." << endl;
+					}
+					if (!isHasHammer) {
+						if (Language)
+							cout << "___________________________________________\nYou stabbed the knife into the sack and cut it with difficulty...\nMmm, there's a potato inside...but it's a bit rotten...\nYou took a few..." << endl;
+						if (!Language)
+							cout << "___________________________________________\nВы воткнули нож в мешок и с трудом его разрезали...\nМмм, внутри него лежит картошка...правда немного гнилая...\nВы взяли несколько штук..." << endl;
+					}
+					isHasPotatoes = true;
+					system("pause");
+					cycle1();
+				}
+				break;
+			case '2':
+				cycle1();
+				break;
+			default:
+				cycle1();
+				break;
+			}
+		}
+	}
 }
 //цикл подвала
 void cycle1() {
 	nmoves++;
 	system("cls");
 	if (Language) {
-		cout << "___________________________________________\nYou are standing in the center of the basement...\nWindow 1\nCloset 2\nDoor 3\nCarpet 4" << endl;
+		cout << "___________________________________________\nYou are standing in the center of the basement...\nWindow 1\nCloset 2\nDoor 3\nCarpet 4\nBag 5" << endl;
 		if (nhelp != 0)
 			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
 		if (isHasKnife)
 			cout << endl << "You have: Knife..." << endl;
 		if (isHasKey1)
 			cout << endl << "You have: Key..." << endl;
+		if (isHasHammer)
+			cout << endl << "You have: Hammer..." << endl;
+		if (isHasPotatoes)
+			cout << endl << "You have: Potatoes..." << endl;
+		if (isHasValve)
+			cout << endl << "You have: Valve..." << endl;
 	}
 	if (!Language) {
-		cout << "___________________________________________\nТы стоишь в центре подвала...\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4" << endl;
+		cout << "___________________________________________\nТы стоишь в центре подвала...\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4\nМешок 5" << endl;
 		if (nhelp != 0)
 			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
 		if (isHasKnife)
 			cout << endl << "У тебя есть: Нож..." << endl;
 		if (isHasKey1)
 			cout << endl << "У тебя есть: Ключ..." << endl;
+		if (isHasHammer)
+			cout << endl << "У тебя есть: Молоток..." << endl;
+		if (isHasPotatoes)
+			cout << endl << "У тебя есть: Картошка..." << endl;
+		if (isHasValve)
+			cout << endl << "У тебя есть: Вентиль..." << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -406,17 +476,50 @@ void cycle1() {
 	case '4':
 		location(4);
 		break;
+	case '5':
+		location(5);
+		break;
 	case 'x':
 		if (nhelp == 0)
 			cycle1();
 		if (nhelp != 0) {
 			nmoves++;
 			system("cls");
+			if (!isHasPotatoes && isHasKnife) {
+				if (Language)
+					cout << "___________________________________________\nCut open a bag of potatoes" << endl;
+				if (!Language)
+					cout << "___________________________________________\nРазрежь мешок с картошкой" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
 			if (isHasKnife) {
 				if (Language)
 					cout << "___________________________________________\nCut the carpet with a knife" << endl;
 				if (!Language)
 					cout << "___________________________________________\nРазрежь ножом ковёр" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+			if (isHasPotatoes) {
+				if (Language)
+					cout << "___________________________________________\nGive potatoes to pig" << endl;
+				if (!Language)
+					cout << "___________________________________________\nДай картошку свинье" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+			if (isHasHammer) {
+				if (Language)
+					cout << "___________________________________________\nThrow a hammer at the window" << endl;
+				if (!Language)
+					cout << "___________________________________________\nКинь молоток в окно" << endl;
 				system("pause");
 				qhelp++;
 				nhelp--;
@@ -457,13 +560,77 @@ void window() {
 		cout << "		 SSSS    AAAA   UU  UU  LL\n		SS      AA  AA  UU  UU  LL\n		 SSSS   AAAAAA  UU  UU  LL\n		    SS  AA  AA  UU  UU  LL\n		 SSSS   AA  AA   UUUU   LLLLLL" << endl << endl;
 		cout << "		 GGGG    OOOO    OOOO   DDDDD   MM   MM   AAAA   NN  NN\n		GG      OO  OO  OO  OO  DD  DD  MMM MMM  AA  AA  NNN NN\n		GG GGG  OO  OO  OO  OO  DD  DD  MM M MM  AAAAAA  NN NNN\n		GG  GG  OO  OO  OO  OO  DD  DD  MM   MM  AA  AA  NN  NN\n		 GGGG    OOOO    OOOO   DDDDD   MM   MM  AA  AA  NN  NN" << endl << endl;
 		system("explorer https://youtu.be/jeM9yRJwKl8");
+		system("pause");
+		cycle1_1();
 	}
-	if (Language)
-		cout << "___________________________________________\nYou looked out the window...there is night\nYou turned around and went to the center of the room.." << endl << endl;
-	if (!Language)
-		cout << "___________________________________________\nВы выглянули в окно...там ночь\nВы повернулись и вернулись в центр комнаты.." << endl << endl;
-	system("pause");
-	cycle1();
+	if (windows_broke) {
+		if (!figt) {
+			if (Language)
+				cout << "___________________________________________\nYou carefully climbed through the broken window...\nWell 1\nBarbecue 2\nPen 3\nBench 4\nGo back 5" << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы аккуратно пролезли через разбитое окно...\nКолодец 1\nМангал 2\nЗагон 3\nЛавочка 4\nВернуться 5" << endl;
+		}
+		if (figt) {
+			if (Language)
+				cout << "___________________________________________\nYou carefully climbed through the broken window...\nWell, freedom?.. But no, is it a small shed closed by a fence?..\nLooking around, you found:\nWell 1\nBarbecue 2\nPen 3\nBench 4\nGo back 5" << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы аккуратно пролезли через разбитое окно...\nЧтож, свобода?.. А нет, это маленький закрытый забором навес?..\nОсмотревшись вы нашли:\nКолодец 1\nМангал 2\nЗагон 3\nЛавочка 4\nВернуться 5" << endl;
+			figt = false;
+		}
+
+		switch (_getch()) {
+		case '1':
+			ghost_killing(1);
+			break;
+		case '2':
+			ghost_killing(2);
+			break;
+		case '3':
+			ghost_killing(3);
+			break;
+		case '4':
+			ghost_killing(4);
+			break;
+		case '5':
+			cycle1();
+			break;
+		default:
+			cycle1_1();
+			break;
+		}
+	}
+	if (isHasHammer) {
+		if (Language)
+			cout << "___________________________________________\nYou looked out the window...it was night\nBut you could see something like a small vegetable garden...\nBreak window 1\nLeave 2" << endl << endl;
+		if (!Language)
+			cout << "___________________________________________\nВы выглянули в окно...там была ночь\nНо вы смогли разглядеть что-то наподобие маленького огорода...\nРазбить окно 1\nУйти 2" << endl << endl;
+		switch (_getch()) {
+		case '1':
+			windows_broke = true;
+			isHasHammer = false;
+			if (Language)
+				cout << "___________________________________________\nYou stepped aside and accurately threw the hammer at the window...\nA reckless act, because now you don't have a hammer...\nBut! The window is open..." << endl << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы отошли подальше и метко кинули молоток в окно...\nОпрометчивый поступок, ведь теперь у вас нет молотка...\nЗато! Окно открыто..." << endl << endl;
+			system("pause");
+			cycle1();
+			break;
+		case '2':
+			cycle1();
+			break;
+		default:
+			cycle1();
+			break;
+		}
+	}
+	if (!isHasHammer) {
+		if (Language)
+			cout << "___________________________________________\nYou looked out the window...it was night\nBut you could see something like a small vegetable garden...\nYou turned around and went to the center of the room..." << endl << endl;
+		if (!Language)
+			cout << "___________________________________________\nВы выглянули в окно...там была ночь\nНо вы смогли разглядеть что-то наподобие маленького огорода...\nВы повернулись и вернулись в центр комнаты..." << endl << endl;
+		system("pause");
+		cycle1();
+	}
 }
 //шкаф 
 void close(int cl) {
@@ -572,12 +739,12 @@ void door() {
 		case '1':
 			nmoves++;
 			save = 1;
-			isHasKey1 = false;
+			figt = true, isHasKey1 = false;
 			break;
 		case '2':
 			nhelp++;
 			nmoves++;
-			isHasKey1 = false;
+			figt = true, isHasKey1 = false;
 			escape();
 			break;
 		default:
@@ -598,7 +765,7 @@ void door() {
 		}
 	}
 }
-//кове́р
+//ковёр
 void carpter() {
 	system("cls");
 	if (isHasKnife) {
@@ -606,16 +773,23 @@ void carpter() {
 			cout << "___________________________________________\nYou sat down on the carpet and felt something in the center...\nCut 1\nLeave 2" << endl;
 		if (!Language)
 			cout << "___________________________________________\nВы сели на ковёр и почувствовали, что под ним что-то есть...\nРазрезать 1\nУйти 2" << endl;
-		switch (_getch())
-		{
+		switch (_getch()) {
 		case '1':
 			nmoves++;
-			isHasKey1 = true;
-			isHasKnife = false;
-			if (Language)
-				cout << "___________________________________________\nYou cut the carpet with difficulty... you broke the Knife, but you got the Key from under the carpet" << endl;
-			if (!Language)
-				cout << "___________________________________________\nВы с трудом разрезали ковёр... вы сломали нож, но при этом достали ключ из углубления под ковром" << endl;
+			isHasHammer = true;
+			if (!isHasPotatoes) {
+				if (Language)
+					cout << "___________________________________________\nYou cut the carpet with difficulty... you got the hammer from under the carpet" << endl;
+				if (!Language)
+					cout << "___________________________________________\nВы с трудом разрезали ковёр... вы достали молоток из углубления под ковром" << endl;
+			}
+			if (isHasPotatoes) {
+				isHasKnife = false;
+				if (Language)
+					cout << "___________________________________________\nYou cut the carpet with difficulty... you broke the knife, but you got the hammer from under the carpet" << endl;
+				if (!Language)
+					cout << "___________________________________________\nВы с трудом разрезали ковёр... вы сломали нож, но при этом достали молоток из углубления под ковром" << endl;
+			}
 			system("pause");
 			cycle1();
 			break;
@@ -628,7 +802,8 @@ void carpter() {
 			break;
 		}
 	}
-	if (isHasKey1) {
+	if (windows_broke || isHasHammer) {
+		nmoves++;
 		if (Language)
 			cout << "___________________________________________\nYou looked at the carpet under your feet...\n.....why did you cut it in the shape of Among Us?..." << endl;
 		if (!Language)
@@ -659,6 +834,233 @@ void carpter() {
 			cycle1();
 			break;
 		}
+	}
+}
+//мини-двор
+void ghost_killing(int boo) {
+	nmoves++;
+	system("cls");
+	//колодец ☑
+	if (boo == 1) {
+		if (isHasKey1) {
+			if (Language)
+				cout << "___________________________________________\nEmpty well...nothing else interesting..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nПустой колодец...больше ничего интересного..." << endl;
+			system("pause");
+			cycle1_1();
+		}
+		if (isHasValve) {
+			if (Language)
+				cout << "___________________________________________\nYou went to the well and, attaching a valve to it, began to turn it..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к колодцу и, прикрепив к нему вентиль, начали его крутить..." << endl;
+			Sleep(15000);
+			if (Language)
+				cout << "___________________________________________\nFinally taking out the bucket, you found the key inside it..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nНаконец-таки достав ведро, вы обнаружили внутри него ключ..." << endl;
+			isHasValve = false, isHasKey1 = true;
+			system("pause");
+			cycle1_1();
+		}
+		if (!isHasValve) {
+			if (Language)
+				cout << "___________________________________________\nYou approached the well and looked inside...\nVery deep, but at the bottom you noticed a bucket...\nYou can't raise it without a valve..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к колодцу и заглянули внутрь...\nВесьма глубоко, но на его дне вы заметили ведро...\nБез вентиля не поднять..." << endl;
+			system("pause");
+			cycle1_1();
+		}
+	}
+	//мангал ☑
+	if (boo == 2) {
+		if (Language)
+			cout << "___________________________________________\nYou approached the brazier...you feel hungry...\nAlas, it's empty..." << endl;
+		if (!Language)
+			cout << "___________________________________________\nВы подошли к мангалу...вам лишь бы пожрать...\nУвы, но мангал пуст..." << endl;
+		system("pause");
+		cycle1_1();
+	}
+	//загон ☑
+	if (boo == 3) {
+		if (pig_eat) {
+			if (Language)
+				cout << "___________________________________________\nYou've reached the fence...\nThe pig looks pretty...but there's nothing else of interest there..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к забору...\nСвинка выглядит довольной...но там больше нет ничего интересного..." << endl;
+			system("pause");
+			cycle1_1();
+		}
+		if (isHasPotatoes) {
+			if (Language)
+				cout << "___________________________________________\nYou approached the fence of the corral...behind it, a fat and dirty pig was lying in the mud\nAs soon as you approached the fence, the pig looked at you and grunted displeasedly, turned away...\nThrow potatoes 1\nLeave 2" << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к забору загона...за ним в грязи лежала жирная и грязная свинья\nКак только вы подошли к забору, свинья посмотрела на вас и недовольно хрюкнув, отвернулась...\nКинуть картошку 1\nУйти 2" << endl;
+			switch (_getch()) {
+			case '1':
+				if (Language)
+					cout << "___________________________________________\nYou threw some potatoes over the fence...\nAt first, the pig didn't pay any attention to them...\nBut after a while, she got up lazily and approached them and started to eat...\nYou jumped over the fence without wasting a second and we went into a small room of the pigsty..." << endl;
+				if (!Language)
+					cout << "___________________________________________\nВы кинули несколько картофелин через забор...\nСначала свинья не обратила на них никакого внимания...\nНо через время всё-таки лениво встала и подойдя к ним, начала есть...\nВы не теряя ни секунды перепрыгнули через забор и зашли в небольшое помещения свинарника..." << endl;
+				system("pause");
+				system("cls");
+				if (Language)
+					cout << "___________________________________________\nIt was very dirty and smelly inside...you went around it with a quick step and found what you were looking for - a valve...\nYou quickly left the pigsty and climbed back over the fence..." << endl;
+				if (!Language)
+					cout << "___________________________________________\nВнутри него было очень грязно и воняло...вы быстрым шагом обошли его и нашли то, что искали - вентиль...\nВы быстро ушли из свинарника и обратно перелезли через забор..." << endl;
+				pig_eat = true, isHasValve = true, isHasPotatoes = false;
+				system("pause");
+				cycle1_1();
+				break;
+			case '2':
+				cycle1_1();
+				break;
+			default:
+				cycle1_1();
+				break;
+			}
+		}
+		if (!isHasPotatoes) {
+			if (Language)
+				cout << "___________________________________________\nYou approached the fence of the corral...behind it, a fat and dirty pig was lying in the mud\nAs soon as you approached the fence, the pig looked at you and grunted displeasedly, turned away...\nProbably needs something to distract it..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы подошли к забору загона...за ним в грязи лежала жирная и грязная свинья\nКак только вы подошли к забору, свинья посмотрела на вас и недовольно хрюкнув, отвернулась...\nВидимо надо чем-то её отвлечь..." << endl;
+			system("pause");
+			cycle1_1();
+		}
+	}
+	//лавочка ☑
+	if (boo == 4) {
+		if (Language)
+			cout << "___________________________________________\nYou came to a small bench...\nSit 1\nLeave 2" << endl;
+		if (!Language)
+			cout << "___________________________________________\nВы подошли к небольшой лавочке...\nПосидеть 1\nУйти 2" << endl;
+		switch (_getch()) {
+		case '1':
+			nmoves++;
+			if (Language)
+				cout << "___________________________________________\nYou sat down on a bench... we sit..." << endl << endl;
+			if (!Language)
+				cout << "___________________________________________\nВы присели на скамейку...сидим..." << endl << endl;
+			Sleep(20000);
+			if (Language)
+				cout << "___________________________________________\nAre you tired of sitting on the bench and you got up from it..." << endl;
+			if (!Language)
+				cout << "___________________________________________\nВам надоело сидеть на скамейке и вы с неё встали..." << endl;
+			system("pause");
+			cycle1_1();
+			break;
+		case '2':
+			cycle1_1();
+			break;
+		default:
+			cycle1_1();
+			break;
+		}
+	}
+}
+//цикл мини-дворика ☑
+void cycle1_1() {
+	nmoves++;
+	system("cls");
+	if (Language) {
+		cout << "___________________________________________\nYou're standing in the middle of a mini-courtyard...\nWell 1\nBarbecue 2\nPen 3\nBench 4\nGo back 5" << endl;
+		if (nhelp != 0)
+			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+		if (isHasKnife)
+			cout << endl << "You have: Knife..." << endl;
+		if (isHasKey1)
+			cout << endl << "You have: Key..." << endl;
+		if (isHasHammer)
+			cout << endl << "You have: Hammer..." << endl;
+		if (isHasPotatoes)
+			cout << endl << "You have: Potatoes..." << endl;
+		if (isHasValve)
+			cout << endl << "You have: Valve..." << endl;
+	}
+	if (!Language) {
+		cout << "___________________________________________\nТы стоишь посреди мини-дворика...\nКолодец 1\nМангал 2\nЗагон 3\nЛавочка 4\nВернуться 5" << endl;
+		if (nhelp != 0)
+			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+		if (isHasKnife)
+			cout << endl << "У тебя есть: Нож..." << endl;
+		if (isHasKey1)
+			cout << endl << "У тебя есть: Ключ..." << endl;
+		if (isHasHammer)
+			cout << endl << "У тебя есть: Молоток..." << endl;
+		if (isHasPotatoes)
+			cout << endl << "У тебя есть: Картошка..." << endl;
+		if (isHasValve)
+			cout << endl << "У тебя есть: Вентиль..." << endl;
+	}
+	switch (_getch()) {
+	case '1':
+		ghost_killing(1);
+		break;
+	case '2':
+		ghost_killing(2);
+		break;
+	case '3':
+		ghost_killing(3);
+		break;
+	case '4':
+		ghost_killing(4);
+		break;
+	case '5':
+		cycle1();
+		break;
+	case 'x':
+		if (nhelp == 0)
+			cycle1();
+		if (nhelp != 0) {
+			nmoves++;
+			system("cls");
+			if (!isHasPotatoes && isHasKnife) {
+				if (Language)
+					cout << "___________________________________________\nCut open a bag of potatoes" << endl;
+				if (!Language)
+					cout << "___________________________________________\nРазрежь мешок с картошкой" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+			if (isHasPotatoes) {
+				if (Language)
+					cout << "___________________________________________\nGive potatoes to pig" << endl;
+				if (!Language)
+					cout << "___________________________________________\nДай картошку свинье" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+			if (isHasHammer) {
+				if (Language)
+					cout << "___________________________________________\nThrow a hammer at the window" << endl;
+				if (!Language)
+					cout << "___________________________________________\nКинь молоток в окно" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+			if (isHasKey1) {
+				if (Language)
+					cout << "___________________________________________\nOpen the door with the key" << endl;
+				if (!Language)
+					cout << "___________________________________________\nОткрой дверь ключом" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
+		}
+		break;
+	default:
+		cycle1();
+		break;
 	}
 }
 //побег из подвала
@@ -3978,20 +4380,20 @@ void endgame() {
 		system("pause");
 		system("cls");
 	}
-	if (nmoves < 260) {
+	if (nmoves < 275) {
 		if (Language)
-			cout << "===========================================\n          Achievement earned:\n             Speedrunner\n  Complete the game in less than 260 moves\n===========================================" << endl;
+			cout << "===========================================\n          Achievement earned:\n             Speedrunner\n  Complete the game in less than 275 moves\n===========================================" << endl;
 		if (!Language)
-			cout << "==========================================\n           Получено достижение:\n               Спидранер\n    Пройти игру меньше чем за 260 ходов\n==========================================" << endl;
+			cout << "==========================================\n           Получено достижение:\n               Спидранер\n    Пройти игру меньше чем за 275 ходов\n==========================================" << endl;
 		achievements5 = true;
 		system("pause");
 		system("cls");
 	}
-	if (nmoves > 300) {
+	if (nmoves > 325) {
 		if (Language)
-			cout << "===========================================\n          Achievement earned:\n        Look under every stone...\n Complete the game in more than 300 moves\n===========================================" << endl;
+			cout << "===========================================\n          Achievement earned:\n        Look under every stone...\n Complete the game in more than 325 moves\n===========================================" << endl;
 		if (!Language)
-			cout << "===========================================\n           Получено достижение:\n        Заглянуть под каждый камень...\n    Пройти игру больше чем за 300 ходов\n===========================================" << endl;
+			cout << "===========================================\n           Получено достижение:\n        Заглянуть под каждый камень...\n    Пройти игру больше чем за 325 ходов\n===========================================" << endl;
 		achievements4 = true;
 		system("pause");
 		system("cls");
@@ -4100,7 +4502,7 @@ void endgame() {
 	cout << endl << endl << "TTTTTT  HH  HH   AAAA   NN  NN  KK  KK   SSSS  \n  TT    HH  HH  AA  AA  NNN NN  KK KK   SS     \n  TT    HHHHHH  AAAAAA  NN NNN  KKKK     SSSS  \n  TT    HH  HH  AA  AA  NN  NN  KK KK       SS \n  TT    HH  HH  AA  AA  NN  NN  KK  KK   SSSS  " << endl << endl;
 	cout << "FFFFFF   OOOO   RRRRR     PPPPP   LL       AAAA   YY  YY  IIIIII  NN  NN   GGGG   !!!\nFF      OO  OO  RR  RR    PP  PP  LL      AA  AA   YYYY     II    NNN NN  GG      !!!\nFFFF    OO  OO  RRRRR     PPPPP   LL      AAAAAA    YY      II    NN NNN  GG GGG  !!!\nFF      OO  OO  RR  RR    PP      LL      AA  AA    YY      II    NN  NN  GG  GG\nFF       OOOO   RR  RR    PP      LLLLLL  AA  AA    YY    IIIIII  NN  NN   GGGG   !!!" << endl;
 	system("pause");
-	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, windows_broke = false, isHasHammer = false, isHasPotatoes = false, isHasValve = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
 	main();
 }
 //выбор локации
@@ -4147,14 +4549,14 @@ void main_menu() {
 	system("cls");
 	rnd = rand() % 100;
 	if (Language) {
-		cout << "=================base_escape_v3.5.4=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.5.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "=================base_escape_v3.6=================" << endl << endl;
+		cout << "Welcome to my updated version of base_escape_v3.6\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
 			cout << "Cheat: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	if (!Language) {
-		cout << "======================base_escape_v3.5.4======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.5.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "======================base_escape_v3.6======================" << endl << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
 			cout << "Чит: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
@@ -4214,9 +4616,9 @@ void developer() {
 void updet_list() {
 	system("cls");
 	if (Language)
-		cout << "==========================================\n             List of changes:\n==========================================\n*Added hint system\n*Save system changed\n*Some cosmetic updates\n*Added a new achievement\n\n==========================================\n        Plans for future updates:\n==========================================\n*Change starting locations: Basement, Yard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
+		cout << "==========================================\n             List of changes:\n==========================================\n*Reworked location: Basement\n\n==========================================\n        Plans for future updates:\n==========================================\n*Change starting location: Yard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
 	if (!Language)
-		cout << "==========================================\n            Список изменений:\n==========================================\n*Добавлена система подсказок\n*Изменена система сохранения\n*Некоторые косметические обновления\n*Добавлено новое достижение\n\n==========================================\n        Планы на будущие обновления:\n==========================================\n*Изменение начальных локаций: Подвал, Двор\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
+		cout << "==========================================\n            Список изменений:\n==========================================\n*Переработана локация: Подвал\n\n==========================================\n        Планы на будущие обновления:\n==========================================\n*Изменение начальных локации: Двор\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
 	system("pause");
 	main_menu();
 }
@@ -4338,3 +4740,25 @@ void delte() {
 	system("pause");
 	main_menu();
 }
+
+
+
+/*
+
+									План:
+						    ☑ - готово  ❎ - не готово
+
+	1.Изменение получения ключа, ключ теперь будет в мини-дворе ☑
+	2.Под ковром игрок находит молоток и разбивает им окно ☑
+	3.После он попадает в мини-двор ❎
+		3.1. Локации:
+			  I. Колодец (в нём ключ -> нужен вентиль) ☑
+			 II. Загон со свиньёй (в нём находится вентиль -> надо накормить свинью картошкой гнилой (она в подвале)) ☑
+			III. Мангал (ГЕГ) ☑
+			 IV. Лавочка (можно посидеть ГЕГ) ☑
+			  V. Вернуться в подвал ☑
+		3.2. Ключ лежит в колодце, чтоб достать нужен вентиль ☑
+		3.3. В подвале добавить мешок, полный гнилой картошки (разрезать ножом) ☑
+	4. Действия игрока: Шкаф -> Ковёр -> Окно -> Двор -> Мешок -> Свинки -> Колодец -> Дверь ❎
+
+*/
