@@ -384,7 +384,7 @@ void location(int loc) {
 		}
 	}
 	if (loc == 5) {
-		if (isHasPotatoes) {
+		if (isHasPotatoes || windows_broke) {
 			if (Language)
 				cout << "___________________________________________\nA sack full of rotten potatoes...nothing interesting..." << endl;
 			if (!Language)
