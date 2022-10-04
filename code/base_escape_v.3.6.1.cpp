@@ -10,7 +10,7 @@ using namespace std;
 
 int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0, cheat = 0;
 bool achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, achievements10 = false, somebody = false, gas_gas_gas = false, sans = false;
-bool Language = true, first_start = true, good_ending = false, firw = true;
+bool Language = true, first_start = true, good_ending = false, firw = true, git = true, comp = false;
 char qsave[] = { "ffffffffff" };
 //инвентарь часть 1
 bool isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false;
@@ -24,7 +24,7 @@ bool isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracke
 bool escpe = false, gameover = false, first_run = true;
 bool look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false;
 bool isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
-string house1, house2, house3, meat, haha, stage, door1, door2, meat_op, dach1, dach2, dach, cruch, cab;
+string house1, house2, house3, meat, haha, stage, door1, door2, meat_op, dach1, dach2, dach, cruch, cab, caret;
 //инвентарь часть 6
 bool isHasKey5 = false;
 
@@ -155,7 +155,7 @@ int main() {
 //Старт
 void start() {
 	system("cls");
-	timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, isHasKey1 = false, windows_broke = false, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+	timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
 	if (Language) {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |    Chapter 1. Basement.   |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
 		system("pause");
@@ -239,7 +239,7 @@ void save() {
 		start();
 	}
 	else {
-		timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, isHasHammer = false, isHasPotatoes = false, windows_broke = false, isHasValve = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+		timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
 		file >> sae;
 		file.close();
 		if (sae == "lx55GZ6dG6eJBl2oh6S0vtXVS3|MsS") {
@@ -359,10 +359,18 @@ void location(int loc) {
 		}
 	}
 	if (loc == 4) {
-		if (Language)
-			cout << "___________________________________________\nYou looked at the carpet under your feet...\nIt looks like there's something under it...but its edges are concreted...\nInspect 1\nLeave 2" << endl;
-		if (!Language)
-			cout << "___________________________________________\nВы посмотрели на ковёр под ногами...\nПохоже что под ним что-то есть...но его края забетонированы...\nИзучить 1\nУйти 2" << endl;
+		if (Language) {
+			if (git)
+				caret = "___________________________________________\nYou looked at the carpet under your feet...\nIt looks like there's something under it...but its edges are concreted...\nInspect 1\nLeave 2";
+			cout << caret << endl;
+			git = false;
+		}
+		if (!Language) {
+			if (git)
+				caret = "___________________________________________\nВы посмотрели на ковёр под ногами...\nПохоже что под ним что-то есть...но его края забетонированы...\nИзучить 1\nУйти 2";
+			cout << caret << endl;
+			git = false;
+		}
 		switch (_getch()) {
 		case '1':
 			carpter();
@@ -654,22 +662,7 @@ void close(int cl) {
 			break;
 		}
 	}
-	if (cl == 2 && isHasKnife) {
-		if (Language)
-			cout << "___________________________________________\nYou have opened the bottom drawer... it is empty\nLeave 1" << endl;
-		if (!Language)
-			cout << "___________________________________________\nВы открыли нижний ящик... он пуст\nУйти 1" << endl;
-		switch (_getch()) {
-		case '1':
-			nmoves++;
-			cycle1();
-			break;
-		default:
-			cycle1();
-			break;
-		}
-	}
-	if (cl == 2 && isHasKey1) {
+	if (cl == 2 && comp) {
 		if (Language)
 			cout << "___________________________________________\nYou have opened the bottom drawer... it is empty\nLeave 1" << endl;
 		if (!Language)
@@ -692,7 +685,7 @@ void close(int cl) {
 		switch (_getch()) {
 		case '1':
 			nmoves++;
-			isHasKnife = true;
+			isHasKnife = true, comp = true;
 			if (Language)
 				cout << "___________________________________________\nYou took a knife..." << endl;
 			if (!Language)
@@ -768,7 +761,7 @@ void door() {
 //ковёр
 void carpter() {
 	system("cls");
-	if (isHasKnife) {
+	if (isHasKnife && !isHasHammer) {
 		if (Language)
 			cout << "___________________________________________\nYou sat down on the carpet and felt something in the center...\nCut 1\nLeave 2" << endl;
 		if (!Language)
@@ -777,6 +770,10 @@ void carpter() {
 		case '1':
 			nmoves++;
 			isHasHammer = true;
+			if (Language)
+				caret = "___________________________________________\nYou looked at the carpet under your feet...\nAnd it was quite beautiful...\nInspect 1\nLeave 2";
+			if (!Language)
+				caret = "___________________________________________\nВы посмотрели на ковёр под ногами...\nА он был весьма красивым...\nОсмотреть 1\nУйти 2";
 			if (!isHasPotatoes) {
 				if (Language)
 					cout << "___________________________________________\nYou cut the carpet with difficulty... you got the hammer from under the carpet" << endl;
@@ -4502,7 +4499,7 @@ void endgame() {
 	cout << endl << endl << "TTTTTT  HH  HH   AAAA   NN  NN  KK  KK   SSSS  \n  TT    HH  HH  AA  AA  NNN NN  KK KK   SS     \n  TT    HHHHHH  AAAAAA  NN NNN  KKKK     SSSS  \n  TT    HH  HH  AA  AA  NN  NN  KK KK       SS \n  TT    HH  HH  AA  AA  NN  NN  KK  KK   SSSS  " << endl << endl;
 	cout << "FFFFFF   OOOO   RRRRR     PPPPP   LL       AAAA   YY  YY  IIIIII  NN  NN   GGGG   !!!\nFF      OO  OO  RR  RR    PP  PP  LL      AA  AA   YYYY     II    NNN NN  GG      !!!\nFFFF    OO  OO  RRRRR     PPPPP   LL      AAAAAA    YY      II    NN NNN  GG GGG  !!!\nFF      OO  OO  RR  RR    PP      LL      AA  AA    YY      II    NN  NN  GG  GG\nFF       OOOO   RR  RR    PP      LLLLLL  AA  AA    YY    IIIIII  NN  NN   GGGG   !!!" << endl;
 	system("pause");
-	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, isHasKnife = false, god = true, isHasKey1 = false, windows_broke = false, isHasHammer = false, isHasPotatoes = false, isHasValve = false, pig_eat = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, isHasKey5 = false, i_love_furry = true, isHasMask = false, poison = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, chg = false, tigr = true;
+	ndeath = 0, nsave = 0, nmoves = 0, timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
 	main();
 }
 //выбор локации
@@ -4549,14 +4546,14 @@ void main_menu() {
 	system("cls");
 	rnd = rand() % 100;
 	if (Language) {
-		cout << "=================base_escape_v3.6=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.6\n==================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "=================base_escape_v3.6.1=================" << endl << endl;
+		cout << "Welcome to my updated version of base_escape_v3.6.1\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
 			cout << "Cheat: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	if (!Language) {
-		cout << "======================base_escape_v3.6======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6\n============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "======================base_escape_v3.6.1======================" << endl << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6.1\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 6)
 			cout << "Чит: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
@@ -4616,9 +4613,9 @@ void developer() {
 void updet_list() {
 	system("cls");
 	if (Language)
-		cout << "==========================================\n             List of changes:\n==========================================\n*Reworked location: Basement\n\n==========================================\n        Plans for future updates:\n==========================================\n*Change starting location: Yard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
+		cout << "==========================================\n             List of changes:\n==========================================\n*Reworked location: Basement\n*Some visual fixes\n\n==========================================\n        Plans for future updates:\n==========================================\n*Change starting location: Yard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
 	if (!Language)
-		cout << "==========================================\n            Список изменений:\n==========================================\n*Переработана локация: Подвал\n\n==========================================\n        Планы на будущие обновления:\n==========================================\n*Изменение начальных локации: Двор\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
+		cout << "==========================================\n            Список изменений:\n==========================================\n*Переработана локация: Подвал\n*Некоторые визуальные исправления\n\n==========================================\n        Планы на будущие обновления:\n==========================================\n*Изменение начальных локации: Двор\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl;
 	system("pause");
 	main_menu();
 }
@@ -4748,17 +4745,5 @@ void delte() {
 									План:
 						    ☑ - готово  ❎ - не готово
 
-	1.Изменение получения ключа, ключ теперь будет в мини-дворе ☑
-	2.Под ковром игрок находит молоток и разбивает им окно ☑
-	3.После он попадает в мини-двор ❎
-		3.1. Локации:
-			  I. Колодец (в нём ключ -> нужен вентиль) ☑
-			 II. Загон со свиньёй (в нём находится вентиль -> надо накормить свинью картошкой гнилой (она в подвале)) ☑
-			III. Мангал (ГЕГ) ☑
-			 IV. Лавочка (можно посидеть ГЕГ) ☑
-			  V. Вернуться в подвал ☑
-		3.2. Ключ лежит в колодце, чтоб достать нужен вентиль ☑
-		3.3. В подвале добавить мешок, полный гнилой картошки (разрезать ножом) ☑
-	4. Действия игрока: Шкаф -> Ковёр -> Окно -> Двор -> Мешок -> Свинки -> Колодец -> Дверь ❎
 
 */
