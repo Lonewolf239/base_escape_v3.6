@@ -3,12 +3,13 @@
 #include <conio.h>
 #include <locale>
 #include <windows.h>
+#include <ctime>
 
 using namespace std;
 
 //основные настройки и достижения
 
-int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0, cheat = 0;
+int ndeath = 0, nsave = 0, nmoves = 0, timr = 45; float x_pl = 0, infection_stage = 0, nhelp = 0, qhelp = 0, cheat = 0, rnd = rand() % 100;
 bool achievements1 = false, achievements2 = false, achievements3 = false, achievements4 = false, achievements5 = false, achievements6 = false, achievements7 = false, achievements8 = false, achievements9 = false, achievements10 = false, somebody = false, gas_gas_gas = false, sans = false;
 bool Language = true, first_start = true, good_ending = false, firw = true, git = true, comp = false;
 char qsave[] = { "ffffffffff" };
@@ -110,12 +111,14 @@ void developer();
 void updet_list();
 void achievements();
 void delte();
+void soc_netw();
 
 //часть 1
 // 
 //main
 int main() {
 	system("cls");
+	srand(time(NULL));
 	ifstream achievements("C:/Windows/Temp/qsave.txt");
 	if (achievements.is_open())
 		achievements >> qsave;
@@ -4542,19 +4545,18 @@ void levels() {
 }
 //меню
 void main_menu() {
-	int rnd = rand() % 100;
 	system("cls");
 	rnd = rand() % 100;
 	if (Language) {
-		cout << "=================base_escape_v3.6.1=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.6.1\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
-		if (rnd == 6)
+		cout << "=================base_escape_v3.6.2=================" << endl << endl;
+		cout << "Welcome to my updated version of base_escape_v3.6.2\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		if (rnd == 4)
 			cout << "Cheat: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	if (!Language) {
-		cout << "======================base_escape_v3.6.1======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6.1\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
-		if (rnd == 6)
+		cout << "======================base_escape_v3.6.2======================" << endl << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6.2\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		if (rnd == 4)
 			cout << "Чит: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	switch (_getch()) {
@@ -4603,11 +4605,20 @@ void main_menu() {
 void developer() {
 	system("cls");
 	if (!Language)
-		cout << "       Мои соц.сети:\n===========================\n    Discord: Bubba#4211\n       VK: @1blitz01\n    Telegram: @an1onime\n===========================\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
+		cout << "===================\n   Разработчики:\n===================\n Програмированние:\n    Lonewolf239\n===================\n      Сюжет:\n    Lonewolf239\n      qscvhu\n===================\n Создание иконки:\n      qscvhu\n===================\n     Перевод:\n Google Translate\n===================\n    Соц.сети 1\n      Выйти 2\n===================\n\n\n\n\n\n\n\n\n" << endl << endl;
 	if (Language)
-		cout << "    My social networks:\n===========================\n    Discord: Bubba#4211\n       VK: @1blitz01\n    Telegram: @an1onime\n===========================\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
-	system("pause");
-	main_menu();
+		cout << "===================\n    Developers:\n===================\n   Programming:\n    Lonewolf239\n===================\n       Plot:\n    Lonewolf239\n      qscvhu\n===================\n Creating an icon:\n      qscvhu\n===================\n   Translation:\n Google Translate\n===================\n Social networks 1\n      Exit 2\n===================\n\n\n\n\n\n\n\n\n" << endl << endl;
+	switch (_getch()) {
+	case '1':
+		soc_netw();
+		break;
+	case '2':
+		main_menu();
+		break;
+	default:
+		developer();
+		break;
+	}
 }
 //список обновления
 void updet_list() {
@@ -4737,7 +4748,17 @@ void delte() {
 	system("pause");
 	main_menu();
 }
-
+//соц.сети
+void soc_netw() {
+	system("cls");
+	if (Language)
+		cout << "    Social network:\n";
+	if (!Language)
+		cout << "      Соц. сети:\n";
+	cout << "======================\n     Lonewolf239:\n Discord: Bubba#4211\n    VK: @1blitz01\n Telegram: @an1onime\n======================\n       qscvhu:\n  VK: @mark_kabolov\n  Telegram: @Apsyuch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl << endl << endl;
+	system("pause");
+	main_menu();
+}
 
 
 /*
