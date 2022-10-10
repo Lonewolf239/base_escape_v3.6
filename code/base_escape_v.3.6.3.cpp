@@ -24,7 +24,7 @@ bool isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracke
 //инвентарь часть 5
 bool escpe = false, gameover = false, first_run = true;
 bool look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false;
-bool isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, ryr = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true, tipr = false, typ = false;
+bool isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, gig = false, god = true, ryr = false, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true, tipr = false, typ = false;
 string house1, house2, house3, meat, haha, stage, door1, door2, meat_op, dach1, dach2, dach, cruch, cab, caret;
 //инвентарь часть 6
 bool isHasKey5 = false;
@@ -112,6 +112,7 @@ void updet_list();
 void achievements();
 void delte();
 void soc_netw();
+void save(int s);
 
 //часть 1
 // 
@@ -290,7 +291,7 @@ void save() {
 			cout << "LOADING SAVE..." << endl << endl;
 			cout << "SAVE LOADED SUCCESSFULLY" << endl << endl;
 			nsave = 6;
-			nmoves = 170;
+			nmoves = 150;
 			system("pause");
 			cycle5();
 		}
@@ -307,7 +308,7 @@ void save() {
 			cout << "LOADING SAVE..." << endl << endl;
 			cout << "SAVE LOADED SUCCESSFULLY" << endl << endl;
 			nsave = 8;
-			nmoves = 180;
+			nmoves = 200;
 			meat_open = true, isHasMeat = false, dog_die = true, house2_com = true, house1_com = true;
 			system("pause");
 			cycle5();
@@ -316,7 +317,7 @@ void save() {
 			cout << "LOADING SAVE..." << endl << endl;
 			cout << "SAVE LOADED SUCCESSFULLY" << endl << endl;
 			nsave = 9;
-			nmoves = 200;
+			nmoves = 225;
 			meat_open = true, isHasAxe = true, dog_die = true, house3_com = true, house2_com = true, house1_com = true;
 			system("pause");
 			cycle5();
@@ -325,7 +326,7 @@ void save() {
 			cout << "LOADING SAVE..." << endl << endl;
 			cout << "SAVE LOADED SUCCESSFULLY" << endl << endl;
 			nsave = 10;
-			nmoves = 210;
+			nmoves = 250;
 			meat_open = true, house3_com = true, dog_die = true, house2_com = true, house1_com = true, oil = true, isHasAxe = true;
 			system("pause");
 			cycle5();
@@ -2643,14 +2644,25 @@ void forest() {
 	}
 	if (escpe) {
 		if (first_run) {
+			system("pause");
 			system("cls");
-			ofstream file("C:/Windows/Temp/save.txt");
-			if (file.is_open()) {
-				file << "Fdcj*G2@~L~?j4Wb5NHw9$oG8lljs~";
-				file.close();
-				cout << "SAVE SUCCESSFUL" << endl;
-				nsave++;
-				system("pause");
+			if (Language)
+				cout << "Do you want to save your progress?\nYes 1\nNo 2 (+1 hint)" << endl;
+			if (!Language)
+				cout << "Вы хотите сохранить свой прогресс?\nДа 1\nНет 2 (+1 подсказка)" << endl;
+			switch (_getch()) {
+			case '1':
+				nmoves++;
+				save(1);
+				break;
+			case '2':
+				system("cls");
+				nhelp++;
+				nmoves++;
+				break;
+			default:
+				forest();
+				break;
 			}
 		}
 		first_run = false;
@@ -3084,6 +3096,27 @@ void village(int vil) {
 }
 //цикл деревни 
 void cycle5() {
+	if (ryr) {
+		if (Language)
+			cout << "Do you want to save your progress?\nYes 1\nNo 2 (+1 hint)" << endl;
+		if (!Language)
+			cout << "Вы хотите сохранить свой прогресс?\nДа 1\nНет 2 (+1 подсказка)" << endl;
+		switch (_getch()) {
+		case '1':
+			nmoves++;
+			save(2);
+			break;
+		case '2':
+			system("cls");
+			nhelp++;
+			nmoves++;
+			break;
+		default:
+			cycle5();
+			break;
+		}
+		ryr = false;
+	}
 	if (Language && first)
 		house1 = "Dwelling house", house2 = "Dwelling house", house3 = "Dwelling house", meat = "closed", haha = "Find another way", meat_op = "Open", dach = "You approached the dacha...the gate is closed...\nYou tried to open it a little, but the dog immediately pounced on you...you quickly closed the gate...\nApparently you should distract it first...\n", dach1 = "Leave 1\n", dach2 = "", cruch = "___________________________________________\nYou have approached the entrance to the catacombs...the door is boarded up...\nApparently we need to find a way to open the door...\nCut the boards 1\nLeave 2";
 	if (!Language && first)
@@ -3164,16 +3197,6 @@ void cycle5() {
 			cout << endl << "У вас есть: Керосиновая лампа..." << endl;
 		if (poison)
 			cout << "========================" << endl << "Стадия заражения: " << stage << "\n========================" << endl;
-	}
-	if (ryr) {
-		ofstream file("C:/Windows/Temp/save.txt");
-		if (file.is_open()) {
-			file << "gc7k|DxbY~E#g~YW~S*7?aYE#TcYY0";
-			file.close();
-			cout << endl << endl << "SAVE SUCCESSFUL" << endl;
-			nsave++;
-		}
-		ryr = false;
 	}
 	switch (_getch()) {
 	case '1':
@@ -3559,18 +3582,31 @@ void dacha() {
 		fit = false;
 	}
 	if (isHasMeat && fit) {
+		if (gig) {
+			if (Language)
+				cout << "Do you want to save your progress?\nYes 1\nNo 2 (+1 hint)" << endl;
+			if (!Language)
+				cout << "Вы хотите сохранить свой прогресс?\nДа 1\nНет 2 (+1 подсказка)" << endl;
+			switch (_getch()) {
+			case '1':
+				nmoves++;
+				save(5);
+				break;
+			case '2':
+				system("cls");
+				nhelp++;
+				nmoves++;
+				break;
+			default:
+				cycle5();
+				break;
+			}
+		}
 		if (Language)
 			cout << "___________________________________________\nYou threw a piece of meat over the fence...immediately after that, strange sounds were heard from behind the fence\nWhen everything was quiet, you opened the gate and went inside...the lifeless body of a dog lay in front of you\nApparently the meat was a little not fresh...Looking around you found:\nPavilion 1\nWarehouse 2\nPorch 3\nWindow 4\nLeave 5" << endl;
 		if (!Language)
 			cout << "___________________________________________\nВы кинули кусок мяса через забор...сразу же после этого из-за забора раздались странные звуки\nКогда всё затихло вы открыли калитку и зашли внутрь...перед вами лежало безжизненное тело собаки\nВидимо мясо было немного не свежим...Осмотревшись вы нашли:\nБеседка 1\nСклад 2\nКрыльцо 3\nОкно 4\nУйти 5" << endl;
 		isHasMeat = false, dog_die = true, fit = false;
-		ofstream file("C:/Windows/Temp/save.txt");
-		if (file.is_open()) {
-			file << "hTao5on4gxvfe@N?yBHiUIR%s?WrUL";
-			file.close();
-			cout << endl << endl << "SAVE SUCCESSFUL" << endl;
-			nsave++;
-		}
 	}
 	switch (_getch()) {
 	case '1':
@@ -3791,6 +3827,26 @@ void beroom() {
 //гостинная дачи 
 void liroom() {
 	system("cls");
+	if (tipr) {
+		if (Language)
+			cout << "Do you want to save your progress?\nYes 1\nNo 2 (+1 hint)" << endl;
+		if (!Language)
+			cout << "Вы хотите сохранить свой прогресс?\nДа 1\nНет 2 (+1 подсказка)" << endl;
+		switch (_getch()) {
+		case '1':
+			nmoves++;
+			save(3);
+			break;
+		case '2':
+			system("cls");
+			nhelp++;
+			nmoves++;
+			break;
+		default:
+			liroom();
+			break;
+		}
+	}
 	if (fig2) {
 		if (Language)
 			cout << "___________________________________________\nYou are standing in the center of the living room...\nSofa 1\Rack 2\nCoffee table 3\nLeave 4" << endl;
@@ -3803,16 +3859,6 @@ void liroom() {
 		if (!Language)
 			cout << "___________________________________________\nВы вошли в гостиную...наконец-то хоть где-то в этой деревне нет гнильной вони...\nОсмотревшись вы нашли:\nДиван 1\nСтеллаж 2\nЖурнальный столик 3\nУйти 4" << endl;
 		fig2 = true;
-	}
-	if (tipr) {
-		ofstream file("C:/Windows/Temp/save.txt");
-		if (file.is_open()) {
-			file << "Ss9Hl9V7IR2KwlihlEYCa{}cHj~Eo~";
-			file.close();
-			cout << endl << endl <<  "SAVE SUCCESSFUL" << endl;
-			nsave++;
-			tipr = false;
-		}
 	}
 	switch (_getch()) {
 	case '1':
@@ -3926,6 +3972,26 @@ void cottage() {
 //мастерская коттеджа 
 void cot_workshop() {
 	system("cls");
+	if (typ) {
+		if (Language)
+			cout << "Do you want to save your progress?\nYes 1\nNo 2 (+1 hint)" << endl;
+		if (!Language)
+			cout << "Вы хотите сохранить свой прогресс?\nДа 1\nНет 2 (+1 подсказка)" << endl;
+		switch (_getch()) {
+		case '1':
+			nmoves++;
+			save(4);
+			break;
+		case '2':
+			system("cls");
+			nhelp++;
+			nmoves++;
+			break;
+		default:
+			liroom();
+			break;
+		}
+	}
 	if (!fit1) {
 		if (Language)
 			cout << "___________________________________________\nYou are standing in the middle of the workshop...\nTool box 1\nWooden box 2\nCardboard box 3\nLeave 4" << endl;
@@ -3938,16 +4004,6 @@ void cot_workshop() {
 		if (!Language)
 			cout << "___________________________________________\nВы вошли в небольшую мастерскую...\nОсмотревшись вы нашли:\nЯщик с инструментами 1\nДеревянный ящик 2\nКартонную каробку 3\nУйти 4" << endl;
 		fit1 = false;
-	}
-	if (typ) {
-		ofstream file("C:/Windows/Temp/save.txt");
-		if (file.is_open()) {
-			file << "ABtY{~U48s6tMhxHPvYd?GkV@y#W~v";
-			file.close();
-			cout << endl << endl << "SAVE SUCCESSFUL" << endl;
-			nsave++;
-			typ = false;
-		}
 	}
 	switch (_getch()) {
 	case '1':
@@ -4851,6 +4907,67 @@ void soc_netw() {
 	cout << "======================\n     Lonewolf239:\n Discord: Bubba#4211\n    VK: @1blitz01\n Telegram: @an1onime\n======================\n       qscvhu:\n  VK: @mark_kabolov\n  Telegram: @Apsyuch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl << endl << endl;
 	system("pause");
 	main_menu();
+}
+//сейв
+void save(int s) {
+	system("cls");
+	if (s == 1) {
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "Fdcj*G2@~L~?j4Wb5NHw9$oG8lljs~";
+			file.close();
+			cout << "SAVE SUCCESSFUL" << endl;
+			nsave++;
+			system("pause");
+			forest();
+		}
+	}
+	if (s == 2) {
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "gc7k|DxbY~E#g~YW~S*7?aYE#TcYY0";
+			file.close();
+			cout << "SAVE SUCCESSFUL" << endl;
+			nsave++;
+			cycle5();
+		}
+	}
+	if (s == 3) {
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "Ss9Hl9V7IR2KwlihlEYCa{}cHj~Eo~";
+			file.close();
+			cout << "SAVE SUCCESSFUL" << endl;
+			nsave++;
+			system("pause");
+			tipr = false;
+			liroom();
+		}
+	}
+	if (s == 4) {
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "ABtY{~U48s6tMhxHPvYd?GkV@y#W~v";
+			file.close();
+			cout  << "SAVE SUCCESSFUL" << endl;
+			nsave++;
+			system("pause");
+			typ = false;
+			cot_workshop();
+		}
+	}
+	if (s == 5) {
+		ofstream file("C:/Windows/Temp/save.txt");
+		if (file.is_open()) {
+			file << "hTao5on4gxvfe@N?yBHiUIR%s?WrUL";
+			file.close();
+			cout  << "SAVE SUCCESSFUL" << endl;
+			nsave++;
+			gig = false;
+			system("pause");
+			dacha();
+		}
+	}
 }
 
 
