@@ -146,11 +146,11 @@ int main() {
 		achievements10 = true;
 	setlocale(LC_CTYPE, "rus");
 	if (first_start) {
-		cout << "WW   WW  EEEEE   LL       CCCC    OOOO   MM   MM  EEEEE\nWW   WW  EE      LL      CC  CC  OO  OO  MMM MMM  EE\nWW W WW  EEEE    LL      CC      OO  OO  MM M MM  EEEE\nWWWWWWW  EE      LL      CC  CC  OO  OO  MM   NN  EE\n WW WW   EEEEE   LLLLLL   CCCC    OOOO   MM   MM  EEEEE" << endl << endl;
+		cout << "WW   WW  EEEEE  LL       CCCC    OOOO   MM   MM  EEEEE\nWW   WW  EE     LL      CC  CC  OO  OO  MMM MMM  EE\nWW W WW  EEEE   LL      CC      OO  OO  MM M MM  EEEE\nWWWWWWW  EE     LL      CC  CC  OO  OO  MM   NN  EE\n WW WW   EEEEE  LLLLLL   CCCC    OOOO   MM   MM  EEEEE" << endl << endl;
 		cout << "IIIIII  NN  NN\n  II    NNN NN\n  II    NN NNN\n  II    NN  NN\nIIIIII  NN  NN" << endl << endl;
 		cout << "BBBBB    AAAA    SSSS   EEEEE\nBB  BB  AA  AA  SS      EE\nBBBBB   AAAAAA   SSSS   EEEE\nBB  BB  AA  AA      SS  EE\nBBBBB   AA  AA   SSSS   EEEEE" << endl << endl;
 		cout << "EEEEE   SSSS    CCCC    AAAA   PPPPP   EEEEE\nEE     SS      CC  CC  AA  AA  PP  PP  EE\nEEEE    SSSS   CC      AAAAAA  PPPPP   EEEE\nEE         SS  CC  CC  AA  AA  PP      EE\nEEEEE   SSSS    CCCC   AA  AA  PP      EEEEE" << endl << endl;
-		cout << " 3333       66666\n3   33      6\n  333       66666\n3   33      6   6\n 3333   **  66666" << endl;
+		cout << " 3333        6666\n3   33      66\n  333       66666\n3   33      66  66\n 3333   **   6666" << endl;
 		system("pause");
 	}
 	main_menu();
@@ -159,7 +159,7 @@ int main() {
 //Старт
 void start() {
 	system("cls");
-	timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, isHasTrap = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
+	timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, bag_com = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
 	if (Language) {
 		wind = "You went to the window and tried to open it...it's closed\nLook 1\nLeave 2";
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |    Chapter 1. Basement.   |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
@@ -173,7 +173,7 @@ void start() {
 		system("cls");
 		cout << "___________________________________________\nLooking around AT FEEL, you realized that it was a small room...\nYou found:\nWindow 1\nCloset 2\nDoor 3\nCarpet 4\nBag 5" << endl << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 	}
 	if (!Language) {
 		wind = "Вы подошли к окну и попытались его открыть... оно закрыто\nОсмотреть 1\nУйти 2";
@@ -188,7 +188,7 @@ void start() {
 		system("cls");
 		cout << "___________________________________________\nОсмотревшись НА ОЩУПЬ, ты понял, что находишься в маленькой комнате...\nТы нашёл:\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4\nМешок 5" << endl << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -245,6 +245,10 @@ void save() {
 		start();
 	}
 	else {
+		if(Language)
+			wind = "You went to the window and tried to open it...it's closed\nLook 1\nLeave 2";
+		if(!Language)
+			wind = "Вы подошли к окну и попытались его открыть... оно закрыто\nОсмотреть 1\nУйти 2";
 		timr = 45; x_pl = 0, infection_stage = 0, firw = true, git = true, comp = false, bag_com = false, isHasKnife = false, isHasKey1 = false, figt = true, isHasHammer = false, isHasValve = false, isHasPotatoes = false, pig_eat = false, windows_broke = false, isHasCrowbar = false, isHasMaul = false, isHasExplosives = false, isHasKey2 = false, isHasPlanks = false, isHasKey3 = false, bedroomOpen = false, isHasBooks = false, isHasFirecracker = false, isHasAmongus = false, escpe = false, gameover = false, first_run = true, look_around = false, loop = false, first = true, firhut = true, firroo = true, meat_open = false, isHasAxe = false, isHasBrick = false, lamp = false, oil = false, lamp_oil = false, house1_com = false, house2_com = false, house3_com = false, house4_com = false, church_open = false, isHasKey4 = false, im_gay = true, isHasMeat = false, i_love_furry = true, isHasMask = false, poison = false, god = true, dog_die = false, home_open = false, fit = true, fir = true, fig = false, fig2 = false, fig3 = true, fit1 = true, fit2 = true, chg = false, T_virus = true, catag = true, tigr = true;
 		file >> sae;
 		file.close();
@@ -495,7 +499,7 @@ void cycle1() {
 	if (Language) {
 		cout << "___________________________________________\nYou are standing in the center of the basement...\nWindow 1\nCloset 2\nDoor 3\nCarpet 4\nBag 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		if (isHasKnife)
 			cout << endl << "You have: Knife..." << endl;
 		if (isHasKey1)
@@ -510,7 +514,7 @@ void cycle1() {
 	if (!Language) {
 		cout << "___________________________________________\nТы стоишь в центре подвала...\nОкно 1\nШкаф 2\nДверь 3\nКовёр 4\nМешок 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		if (isHasKnife)
 			cout << endl << "У тебя есть: Нож..." << endl;
 		if (isHasKey1)
@@ -1019,7 +1023,7 @@ void cycle1_1() {
 	if (Language) {
 		cout << "___________________________________________\nYou're standing in the middle of a mini-courtyard...\nWell 1\nBarbecue 2\nPen 3\nBench 4\nGo back 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		if (isHasKnife)
 			cout << endl << "You have: Knife..." << endl;
 		if (isHasKey1)
@@ -1034,7 +1038,7 @@ void cycle1_1() {
 	if (!Language) {
 		cout << "___________________________________________\nТы стоишь посреди мини-дворика...\nКолодец 1\nМангал 2\nЗагон 3\nЛавочка 4\nВернуться 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		if (isHasKnife)
 			cout << endl << "У тебя есть: Нож..." << endl;
 		if (isHasKey1)
@@ -1126,7 +1130,7 @@ void escape() {
 		cout << "When you opened the door, a stream of fresh night wind immediately flew into your face, and the dim night light filled the room.\nConvinced that everything was safe, you went outside.\nIt was a wonderful cloudless night, which made the whole courtyard perfectly visible.\nYour attention was immediately attracted a large mansion in the center of the courtyard.\nLooking closer, you find:" << endl;
 		cout << "Mansion 1\nGate 2\nTreehouse 3\nShed 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 	}
 	if (!Language) {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |       Глава 2. Двор.      |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
@@ -1135,7 +1139,7 @@ void escape() {
 		cout << "Открыв дверь, тебе в лицо сразу же ударил поток свежего ночного воздуха, и тусклый ночной свет залил комнату.\nУбедившись, что все в безопасности, вы вышли на улицу.\nЭто была чудесная безоблачная ночь, от чего двор был прекрасно виден.\nВаше внимание сразу же привлек большой особняк в центре двора.\nПриглядевшись, вы нашли:" << endl;
 		cout << "Особняк 1\nВорота 2\nДомик на дереве 3\nНебольшой сарайчик 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -1280,7 +1284,7 @@ void cycle2() {
 		if (Language) {
 			cout << "___________________________________________\nYou are standing in the middle of the courtyard...\nMansion 1\nGate 2\nTreehouse 3\nShed 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+				cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 			if (isHasCrowbar)
 				cout << endl << "You have: Crowbar..." << endl;
 			if (isHasMaul)
@@ -1289,7 +1293,7 @@ void cycle2() {
 		if (!Language) {
 			cout << "___________________________________________\nВы стоите посреди двора...\nОсобняк 1\nВорота 2\nДом на дереве 3\nСарай 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+				cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 			if (isHasCrowbar)
 				cout << endl << "У вас есть: Монтировка..." << endl;
 			if (isHasMaul)
@@ -1456,7 +1460,7 @@ void mansion() {
 			isHasMaul = false;
 			cout << "___________________________________________\nYou entered a huge lobby... there was a large T-shaped staircase in its center... the first thing that caught your attention:\nStaircase 1\nLounge 2\nKitchen 3\nStorage 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+				cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		}
 		if (!Language) {
 			cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |   Глава 3. Первый этаж.   |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
@@ -1466,7 +1470,7 @@ void mansion() {
 			isHasMaul = false;
 			cout << "___________________________________________\nВы вошли в огромный вестибюль... в его центре была большая Т-образная лестница... первое, что привлекло ваше внимание:\nЛестница 1\nГостинная 2\nКухня 3\nКладовка 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+				cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		}
 		switch (_getch()) {
 		case '1':
@@ -1812,7 +1816,7 @@ void cycle3() {
 	if (Language) {
 		cout << "___________________________________________\nYou are standing in the center of the hallway...\nStaircase 1\nLounge 2\nKitchen 3\nStorage 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		if (isHasPlanks)
 			cout << endl << "You have: Planks..." << endl;
 		if (isHasKey2)
@@ -1821,7 +1825,7 @@ void cycle3() {
 	if (!Language) {
 		cout << "___________________________________________\nВы стоите в центре прихожей...\nЛестница 1\nГостинная 2\nКухня 3\nКладовка 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		if (isHasPlanks)
 			cout << endl << "У вас есть: Доски..." << endl;
 		if (isHasKey2)
@@ -1947,7 +1951,7 @@ void ladder() {
 			system("cls");
 			cout << "___________________________________________\nYou climbed to the second floor...the floor creaked under your feet, but looking around you found:\nCabinet 1\nBedroom 2\nRestroom 3\nAttic 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+				cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		}
 		if (!Language) {
 			cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |   Глава 4. Второй этаж.   |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
@@ -1955,7 +1959,7 @@ void ladder() {
 			system("cls");
 			cout << "___________________________________________\nВы залезли на второй этаж...пол скрипел под вашими ногами, осмотревшись вы нашли:\nКабинет 1\nСпальню 2\nКомнату отдыха 3\nЧердак 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+				cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		}
 		isHasKey2 = false;
 		isHasPlanks = false;
@@ -2207,7 +2211,7 @@ void cycle4() {
 	if (Language) {
 		cout << "___________________________________________\nYou are standing next to the stairs\nCabinet 1\nBedroom 2\nRestroom 3\nAttic 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		if (isHasFirecracker)
 			cout << endl << "You have: Firecracker..." << endl;
 		if (isHasKey3)
@@ -2220,7 +2224,7 @@ void cycle4() {
 	if (!Language) {
 		cout << "___________________________________________\nВы стоите рядом с лестницей\nКабинет 1\nСпальня 2\nКомната отдыха 3\nЧердак 4" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		if (isHasFirecracker)
 			cout << endl << "У вас есть: Петарды..." << endl;
 		if (isHasKey3)
@@ -2920,7 +2924,7 @@ void prev_village() {
 		system("cls");
 		cout << "___________________________________________\nYou are standing in the middle of an abandoned village...quite a creepy place...\nThere is a rotten stench in the air...it seems you are not alone here...you should be careful\nLooking around you found some interesting houses:\nButcher shop 1\nDwelling house 2\nDwelling house 3\nDwelling house 4\nChurch 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 	}
 	if (!Language) {
 		cout << "\n\n\n\n\n\n\n\n\n          =============================\n          |                           |\n          |     Глава 6. Деревня.     |\n          |                           |\n          =============================\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl;
@@ -2928,7 +2932,7 @@ void prev_village() {
 		system("cls");
 		cout << "___________________________________________\nВы стоите в центре заброшенной деревни...довольно-таки жуткое место...\nВ воздухе веет гнильная вонь...кажется вы тут не одни...стоит быть осторожным\nОсмотревшись вы нашли несколько интересных домиков:\nМясная лавка 1\nЖилой дом 2\nЖилой дом 3\nЖилой дом 4\nЦерковь 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 	}
 	switch (_getch()) {
 	case '1':
@@ -3162,7 +3166,7 @@ void cycle5() {
 	if (Language) {
 		cout << "___________________________________________\nYou are standing in the middle of an abandoned village...\nButcher shop 1\n" << house1 << " 2\n" << house2 << " 3\n" << house3 << " 4\nChurch 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+			cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 		if (isHasKey4)
 			cout << endl << "You have: Key to the butcher shop..." << endl;
 		if (isHasTrap)
@@ -3187,7 +3191,7 @@ void cycle5() {
 	if (!Language) {
 		cout << "___________________________________________\nВы стоите в центре заброшенной деревни...\nМясная лавка 1\n" << house1 << " 2\n" << house2 << " 3\n" << house3 << " 4\nЦерковь 5" << endl;
 		if (nhelp != 0)
-			cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+			cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 		if (isHasKey4)
 			cout << endl << "У вас есть: Ключ от мясной лавки..." << endl;
 		if (isHasTrap)
@@ -4318,7 +4322,7 @@ void deep_catacombs() {
 		if (Language) {
 			cout << "___________________________________________\nYou are standing in the middle of the catacombs...\nDoor 1\nDoor 2\ nDoor 3\nDoor 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+				cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 			if (isHasKey5)
 				cout << endl << "You have: Key..." << endl;
 			if (isHasTrap)
@@ -4327,7 +4331,7 @@ void deep_catacombs() {
 		if (!Language) {
 			cout << "___________________________________________\nВы стоите посреди катакомб...\nДверь 1\nДверь 2\nДверь 3\nДверь 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+				cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 			if (isHasKey5)
 				cout << endl << "У вас есть: Ключ..." << endl;
 			if (isHasTrap)
@@ -4338,7 +4342,7 @@ void deep_catacombs() {
 		if (Language) {
 			cout << "___________________________________________\nYou opened the door and entered the catacombs...when suddenly the door slammed shut behind you...\nApparently it can't be opened anymore...\nYou continued to descend into the catacombs...as you descended, you saw a fork:\nDoor 1\nDoor 2\ nDoor 3\nDoor 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Help (You have: " << nhelp << ") X" << endl;
+				cout << endl << "Help (You have: " << nhelp << ") press: X" << endl;
 			if (isHasKey5)
 				cout << endl << "You have: Key..." << endl;
 			if (isHasTrap)
@@ -4347,7 +4351,7 @@ void deep_catacombs() {
 		if (!Language) {
 			cout << "___________________________________________\nВы открыли дверь и зашли в катакомбы...как вдруг дверь за вами захлопнулась...\nВидимо её уже не открыть...\nВы продолжили спускаться в катакомбы...спустившись вашему взору предстала развилка:\nДверь 1\nДверь 2\nДверь 3\nДверь 4" << endl;
 			if (nhelp != 0)
-				cout << endl << "Подсказка (У вас: " << nhelp << ") X" << endl;
+				cout << endl << "Подсказка (У вас: " << nhelp << ") нажмите: X" << endl;
 			if (isHasKey5)
 				cout << endl << "У вас есть: Ключ..." << endl;
 			if (isHasTrap)
@@ -4803,6 +4807,17 @@ void developer() {
 		break;
 	}
 }
+//соц.сети
+void soc_netw() {
+	system("cls");
+	if (Language)
+		cout << "    Social network:\n";
+	if (!Language)
+		cout << "      Соц. сети:\n";
+	cout << "======================\n     Lonewolf239:\n Discord: Bubba#4211\n    VK: @1blitz01\n Telegram: @an1onime\n======================\n       qscvhu:\n  VK: @mark_kabolov\n  Telegram: @Apsyuch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl << endl << endl;
+	system("pause");
+	main_menu();
+}
 //список обновления
 void updet_list() {
 	system("cls");
@@ -4931,17 +4946,7 @@ void delte() {
 	system("pause");
 	main_menu();
 }
-//соц.сети
-void soc_netw() {
-	system("cls");
-	if (Language)
-		cout << "    Social network:\n";
-	if (!Language)
-		cout << "      Соц. сети:\n";
-	cout << "======================\n     Lonewolf239:\n Discord: Bubba#4211\n    VK: @1blitz01\n Telegram: @an1onime\n======================\n       qscvhu:\n  VK: @mark_kabolov\n  Telegram: @Apsyuch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl << endl << endl << endl << endl;
-	system("pause");
-	main_menu();
-}
+
 //сейв
 void save(int s) {
 	system("cls");
