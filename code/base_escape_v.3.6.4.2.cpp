@@ -558,6 +558,16 @@ void cycle1() {
 				nhelp--;
 				cycle1();
 			}
+			if (isHasValve) {
+				if (Language)
+					cout << "___________________________________________\nGet the key from the well" << endl;
+				if (!Language)
+					cout << "___________________________________________\nДостань ключ из колодца" << endl;
+				system("pause");
+				qhelp++;
+				nhelp--;
+				cycle1();
+			}
 			if (isHasKnife) {
 				if (Language)
 					cout << "___________________________________________\nCut the carpet with a knife" << endl;
@@ -1092,11 +1102,11 @@ void cycle1_1() {
 				nhelp--;
 				cycle1_1();
 			}
-			if (isHasHammer) {
+			if (isHasValve) {
 				if (Language)
-					cout << "___________________________________________\nThrow a hammer at the window" << endl;
+					cout << "___________________________________________\nGet the key from the well" << endl;
 				if (!Language)
-					cout << "___________________________________________\nКинь молоток в окно" << endl;
+					cout << "___________________________________________\nДостань ключ из колодца" << endl;
 				system("pause");
 				qhelp++;
 				nhelp--;
@@ -4735,13 +4745,13 @@ void main_menu() {
 	rnd = rand() % 100;
 	if (Language) {
 		cout << "=================base_escape_v3.6.4=================" << endl << endl;
-		cout << "Welcome to my updated version of base_escape_v3.6.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developer 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << "Welcome to my updated version of base_escape_v3.6.4\n====================================================\n                       Start 1\n                     Load save 2\n                About the developers 3\n                  Русский/English 4\n              =========================\n                    Changes list 5\n                    Achievements 6\n              =========================\n                  Delete game data 7\n                       Exit 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 4)
 			cout << "Cheat: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
 	if (!Language) {
 		cout << "======================base_escape_v3.6.4======================" << endl << endl;
-		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                        Разработчик 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+		cout << " Добро пожаловать в мою обновлённую версию base_escape_v3.6.4\n==============================================================\n                           Старт 1\n                   Загрузить сохранение 2\n                      О Разработчиках 3\n                      Русский/English 4\n              ==================================\n                      Список изменений 5\n                         Достижения 6\n              ==================================\n                   Удалить игровые данные 7\n                           Выйти 0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		if (rnd == 4)
 			cout << "Чит: 6 -> 3 -> 7 -> 5 -> 1/2";
 	}
